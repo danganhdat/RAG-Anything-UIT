@@ -1,0 +1,15 @@
+raganything[all]
+pymilvus
+milvus-lite
+aiohttp
+orjson
+python-dotenv
+Pillow
+numpy
+rich
+PyMuPDF
+fastapi
+uvicorn
+pydantic
+streamlit
+requests
