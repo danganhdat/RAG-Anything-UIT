@@ -1,3 +1,16 @@
 __pycache__/
+*.pyc
+*.pyo
 .env
+.env.local
 venv/
+.venv/
+milvus_lite.db/
+rag_workdir/
+rag_workdir_min/
+*.log
+*.egg-info/
+dist/
+build/
+.mypy_cache/
+.ruff_cache/

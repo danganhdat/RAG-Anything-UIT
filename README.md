@@ -1,47 +1,67 @@
-# RAG-Anything with Milvus Standalone & DeepSeek-V4
+# RAG-Anything UIT
 
-This repository contains a Multimodal RAG system built using **RAG-Anything**, **LightRAG**, **Milvus Standalone**, and **DeepSeek-V4** (via Aliyun DashScope). 
+Multimodal RAG system built with [RAG-Anything](https://github.com/HKUDS/RAG-Anything), Milvus Lite, and Qwen models via OpenRouter.
 
-It is designed to ingest a massive PDF (`sample/docs/cam_nang_sau_dai_hoc_2025_0.pdf`) and provide intelligent text and multimodal querying.
+Ingests PDFs (parsed by MinerU), builds a knowledge graph + vector index, and serves answers through a FastAPI backend + Streamlit chat UI.
 
-## Setup Instructions
+## Project Structure
 
-### 1. Host Milvus
-You are using **Milvus Lite**. The vector database will automatically run locally within the application and store data in `milvus_lite.db` in your current folder. No external hosting or Docker setup is required!
-
-### 2. Environment Variables
-Your `.env` and `config.py` files have already been updated. Ensure you provide your Aliyun API Key in `.env`:
-```env
-DASHSCOPE_API_KEY=your_api_key_here
-LLM_TEXT_MODEL=deepseek-v4
-MILVUS_URI=milvus_lite.db
 ```
-*Note: Make sure your API key has access to the `deepseek-v4` model on DashScope.*
+rag_app/                   # Main package
+├── core/                  #   Config (Pydantic), exceptions, logging
+├── adapters/              #   OpenRouter LLM + embedding clients
+├── store/                 #   Milvus vector store
+├── services/              #   RAG service, ingestion, DI container
+└── api/                   #   FastAPI app factory, routes, deps
 
-### 3. Install Dependencies
-Make sure you have all required dependencies installed, especially the RAG-Anything package.
+run_api.py                 # Start the API server
+run_ui.py                  # Start the Streamlit chat UI
+ingest_pdf.py              # CLI — ingest a PDF
+query_system.py            # CLI — query the knowledge base
+```
+
+## Setup
+
 ```bash
-pip install -r requirements.txt
-pip install "raganything[all]" 
-pip install pymupdf  # Used as a fallback parser if needed
+python3 -m venv venv && source venv/bin/activate
+pip install -e .                    # or: pip install -r requirements.txt
+cp .env.example .env                # fill in OPENROUTER_API_KEY
 ```
 
-## Running the Pipeline
+Get an API key at [openrouter.ai](https://openrouter.ai/).
 
-### Step 1: Ingest the Massive PDF
-To parse the PDF (`sample/docs/cam_nang_sau_dai_hoc_2025_0.pdf`) and build the vector database and knowledge graph:
+## Usage
+
+### 1. Ingest a PDF
+
 ```bash
-python ingest_pdf.py
+python ingest_pdf.py                                          # default sample PDF
+python ingest_pdf.py path/to/doc.pdf                          # custom PDF
+python ingest_pdf.py path/to/doc.pdf --start-page 0 --end-page 5   # page range
 ```
-*Note: Depending on the PDF size, this may take several minutes to chunk, parse, embed, and insert into Milvus and RAG-Anything's local KV storage.*
 
-### Step 2: Query the Knowledge Base
-Once ingestion is complete, you can start querying your system:
+### 2. Query (CLI)
+
 ```bash
-# Default query (Vietnamese)
-python query_system.py
-
-# Custom query
-python query_system.py "What are the English language requirements?"
+python query_system.py "What are the admission requirements?"
 ```
-The script will use `RAG-Anything` in hybrid mode (searching both vector embeddings and the knowledge graph) to retrieve the best context and generate a response using DeepSeek-V4.
+
+### 3. API + Chat UI
+
+```bash
+# Terminal 1
+python run_api.py
+
+# Terminal 2
+streamlit run run_ui.py
+```
+
+Open http://localhost:8501.
+
+## Troubleshooting
+
+**MinerU fails** — Ensure `raganything[all]` is installed. On Linux/WSL: `sudo apt install libmagic1`. Try `--end-page 2` first to test with fewer pages.
+
+**Missing API key** — The app will fail immediately with a `ValidationError` if `OPENROUTER_API_KEY` is not set in `.env`.
+
+**Embedding dimension mismatch** — If you change `EMBED_MODEL`, update `EMBED_DIM` to match and delete `milvus_lite.db/` to rebuild the index.
