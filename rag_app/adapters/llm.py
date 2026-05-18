@@ -47,38 +47,42 @@ class LLMAdapter(BaseOpenRouterClient):
         *,
         image_data: str | None = None,
         system_prompt: str | None = None,
+        messages: list[dict[str, Any]] | None = None,
         max_tokens: int = 2048,
         temperature: float = 0.2,
     ) -> str:
-        if image_data:
-            b64 = image_data
+        if messages:
+            built_messages = messages
+        elif image_data:
+            built_messages = self._build_messages(prompt, image_data, "image/png", system_prompt)
         elif image_path:
             with open(image_path, "rb") as f:
                 b64 = base64.b64encode(f.read()).decode("utf-8")
+            built_messages = self._build_messages(prompt, b64, _detect_mime(image_path), system_prompt)
         else:
-            raise ValueError("Either image_path or image_data must be provided")
-
-        mime = _detect_mime(image_path) if image_path else "image/png"
-
-        messages: list[dict[str, Any]] = []
-        if system_prompt:
-            messages.append({"role": "system", "content": system_prompt})
-        messages.append({
-            "role": "user",
-            "content": [
-                {"type": "text", "text": prompt},
-                {
-                    "type": "image_url",
-                    "image_url": {"url": f"data:{mime};base64,{b64}"},
-                },
-            ],
-        })
+            raise ValueError("Either image_path, image_data, or messages must be provided")
 
         payload: dict[str, Any] = {
             "model": self._settings.llm_vlm_model,
-            "messages": messages,
+            "messages": built_messages,
             "max_tokens": max_tokens,
             "temperature": temperature,
         }
         data = await self._post_with_retry(self._chat_url, payload)
         return data["choices"][0]["message"]["content"]
+
+    @staticmethod
+    def _build_messages(
+        prompt: str, b64: str, mime: str, system_prompt: str | None
+    ) -> list[dict[str, Any]]:
+        msgs: list[dict[str, Any]] = []
+        if system_prompt:
+            msgs.append({"role": "system", "content": system_prompt})
+        msgs.append({
+            "role": "user",
+            "content": [
+                {"type": "text", "text": prompt},
+                {"type": "image_url", "image_url": {"url": f"data:{mime};base64,{b64}"}},
+            ],
+        })
+        return msgs

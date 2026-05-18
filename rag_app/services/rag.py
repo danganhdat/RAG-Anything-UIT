@@ -42,5 +42,6 @@ class RAGService:
             ),
         )
 
+        await rag._ensure_lightrag_initialized()
         log.info("RAGAnything initialized (working_dir=%s)", settings.rag_working_dir)
         return rag

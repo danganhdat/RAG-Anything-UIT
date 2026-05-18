@@ -5,7 +5,8 @@ import time
 
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
-from raganything import RAGAnything, QueryParam
+# from raganything import RAGAnything, QueryParam
+from raganything import RAGAnything
 
 from rag_app.api.deps import get_container, get_rag
 from rag_app.services.container import ServiceContainer
@@ -41,7 +42,8 @@ async def chat(
     log.info("Query: %s", request.query[:200])
 
     try:
-        answer = await rag.aquery(request.query, param=QueryParam(mode="hybrid"))
+        # answer = await rag.aquery(request.query, param=QueryParam(mode="hybrid"))
+        answer = await rag.aquery(request.query, mode="hybrid") 
     except Exception as exc:
         log.exception("Query failed")
         raise HTTPException(status_code=500, detail=str(exc))

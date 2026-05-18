@@ -5,7 +5,6 @@ __pycache__/
 .env.local
 venv/
 .venv/
-milvus_lite.db/
 rag_workdir_min/
 *.log
 *.egg-info/
