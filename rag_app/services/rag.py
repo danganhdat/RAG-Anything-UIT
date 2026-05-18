@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import logging
 
+import numpy as np
 from lightrag.utils import EmbeddingFunc
 from raganything import RAGAnything
 from raganything.config import RAGAnythingConfig
@@ -25,8 +26,9 @@ class RAGService:
         async def llm_func(prompt: str, **kwargs: object) -> str:
             return await llm.chat(prompt)
 
-        async def embed_func(texts: list[str]) -> list[list[float]]:
-            return await emb.embed_texts(texts)
+        async def embed_func(texts: list[str]) -> np.ndarray:
+            result = await emb.embed_texts(texts)
+            return np.array(result)
 
         config = RAGAnythingConfig(working_dir=settings.rag_working_dir)
         rag = RAGAnything(
