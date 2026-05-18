@@ -40,4 +40,4 @@ class ServiceContainer:
     def get_ingestion_service(self) -> IngestionService:
         if self.rag is None:
             raise RuntimeError("ServiceContainer not started — call startup() first")
-        return IngestionService(self.rag)
+        return IngestionService(self.rag, self.settings)

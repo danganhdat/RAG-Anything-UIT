@@ -38,6 +38,9 @@ class Settings(BaseSettings):
     # RAG
     rag_working_dir: str = "rag_workdir"
 
+    # MinerU parser — "cuda", "cpu", or "mps" (auto-detects if not set)
+    mineru_device: str = "cuda"
+
     # Logging
     log_level: str = "INFO"
 

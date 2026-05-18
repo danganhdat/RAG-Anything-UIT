@@ -5,6 +5,7 @@ from pathlib import Path
 
 from raganything import RAGAnything
 
+from rag_app.core.config import Settings
 from rag_app.core.exceptions import IngestionError
 
 log = logging.getLogger(__name__)
@@ -13,8 +14,9 @@ log = logging.getLogger(__name__)
 class IngestionService:
     """Handles PDF ingestion via RAGAnything's MinerU pipeline."""
 
-    def __init__(self, rag: RAGAnything) -> None:
+    def __init__(self, rag: RAGAnything, settings: Settings) -> None:
         self._rag = rag
+        self._settings = settings
 
     async def ingest_pdf(
         self,
@@ -36,7 +38,9 @@ class IngestionService:
         log.info("Ingesting %s (pages %s)...", path.name, page_range)
 
         try:
-            await self._rag.process_document_complete(str(path), **kwargs)
+            await self._rag.process_document_complete(
+                str(path), device=self._settings.mineru_device, **kwargs
+            )
         except Exception as exc:
             raise IngestionError(f"Failed to ingest {path.name}: {exc}") from exc
 
