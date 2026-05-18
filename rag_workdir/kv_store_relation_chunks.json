@@ -1,0 +1,1660 @@
+{
+  "Employed By<SEP>John Doe": {
+    "chunk_ids": [
+      "chunk-ca586d09eebb201228d9b33ad6b899a0",
+      "chunk-1d4510d4d62115dc898228b60f507615"
+    ],
+    "count": 2,
+    "create_time": 1779125281,
+    "update_time": 1779125281,
+    "_id": "Employed By<SEP>John Doe"
+  },
+  "Located In<SEP>TechCorp": {
+    "chunk_ids": [
+      "chunk-ca586d09eebb201228d9b33ad6b899a0",
+      "chunk-483748684a0878ed3fd34d5d10fa2788"
+    ],
+    "count": 2,
+    "create_time": 1779125281,
+    "update_time": 1779125281,
+    "_id": "Located In<SEP>TechCorp"
+  },
+  "Page 9 - Course Registration Guidelines (page_number)<SEP>Person": {
+    "chunk_ids": [
+      "chunk-ca586d09eebb201228d9b33ad6b899a0"
+    ],
+    "count": 1,
+    "create_time": 1779125281,
+    "update_time": 1779125281,
+    "_id": "Page 9 - Course Registration Guidelines (page_number)<SEP>Person"
+  },
+  "Albert Einstein<SEP>born in": {
+    "chunk_ids": [
+      "chunk-f45c99de2ad46760001319e672323fe4"
+    ],
+    "count": 1,
+    "create_time": 1779125281,
+    "update_time": 1779125281,
+    "_id": "Albert Einstein<SEP>born in"
+  },
+  "Organization<SEP>Page 9 - Course Registration Guidelines (page_number)": {
+    "chunk_ids": [
+      "chunk-ca586d09eebb201228d9b33ad6b899a0"
+    ],
+    "count": 1,
+    "create_time": 1779125282,
+    "update_time": 1779125282,
+    "_id": "Organization<SEP>Page 9 - Course Registration Guidelines (page_number)"
+  },
+  "Google<SEP>works_for": {
+    "chunk_ids": [
+      "chunk-9db00cb2fd9c4b66de32ae72da465403"
+    ],
+    "count": 1,
+    "create_time": 1779125282,
+    "update_time": 1779125282,
+    "_id": "Google<SEP>works_for"
+  },
+  "Location<SEP>Page 9 - Course Registration Guidelines (page_number)": {
+    "chunk_ids": [
+      "chunk-ca586d09eebb201228d9b33ad6b899a0"
+    ],
+    "count": 1,
+    "create_time": 1779125283,
+    "update_time": 1779125283,
+    "_id": "Location<SEP>Page 9 - Course Registration Guidelines (page_number)"
+  },
+  "Organization<SEP>Page 11: Thesis Defense Conditions (page_number)": {
+    "chunk_ids": [
+      "chunk-f45c99de2ad46760001319e672323fe4"
+    ],
+    "count": 1,
+    "create_time": 1779125283,
+    "update_time": 1779125283,
+    "_id": "Organization<SEP>Page 11: Thesis Defense Conditions (page_number)"
+  },
+  "Location<SEP>Page 11: Thesis Defense Conditions (page_number)": {
+    "chunk_ids": [
+      "chunk-f45c99de2ad46760001319e672323fe4"
+    ],
+    "count": 1,
+    "create_time": 1779125283,
+    "update_time": 1779125283,
+    "_id": "Location<SEP>Page 11: Thesis Defense Conditions (page_number)"
+  },
+  "Organization<SEP>Thesis Submission and Graduation Documentation Requirements (list)": {
+    "chunk_ids": [
+      "chunk-9db00cb2fd9c4b66de32ae72da465403"
+    ],
+    "count": 1,
+    "create_time": 1779125283,
+    "update_time": 1779125283,
+    "_id": "Organization<SEP>Thesis Submission and Graduation Documentation Requirements (list)"
+  },
+  "Apple Inc.<SEP>headquartered in": {
+    "chunk_ids": [
+      "chunk-cab612101eb55eba76edcb21b07cf0de"
+    ],
+    "count": 1,
+    "create_time": 1779125283,
+    "update_time": 1779125283,
+    "_id": "Apple Inc.<SEP>headquartered in"
+  },
+  "Location<SEP>Thesis Submission and Graduation Documentation Requirements (list)": {
+    "chunk_ids": [
+      "chunk-9db00cb2fd9c4b66de32ae72da465403"
+    ],
+    "count": 1,
+    "create_time": 1779125284,
+    "update_time": 1779125284,
+    "_id": "Location<SEP>Thesis Submission and Graduation Documentation Requirements (list)"
+  },
+  "Organization<SEP>Page 14 (page_number)": {
+    "chunk_ids": [
+      "chunk-cab612101eb55eba76edcb21b07cf0de"
+    ],
+    "count": 1,
+    "create_time": 1779125284,
+    "update_time": 1779125284,
+    "_id": "Organization<SEP>Page 14 (page_number)"
+  },
+  "Conditions for Academic Study Extension (list)<SEP>Cupertino": {
+    "chunk_ids": [
+      "chunk-1f0d016021da4722163aae51af78f3e8"
+    ],
+    "count": 1,
+    "create_time": 1779125284,
+    "update_time": 1779125284,
+    "_id": "Conditions for Academic Study Extension (list)<SEP>Cupertino"
+  },
+  "Google<SEP>headquartered_in": {
+    "chunk_ids": [
+      "chunk-9db00cb2fd9c4b66de32ae72da465403"
+    ],
+    "count": 1,
+    "create_time": 1779125284,
+    "update_time": 1779125284,
+    "_id": "Google<SEP>headquartered_in"
+  },
+  "Location<SEP>Page 14 (page_number)": {
+    "chunk_ids": [
+      "chunk-cab612101eb55eba76edcb21b07cf0de"
+    ],
+    "count": 1,
+    "create_time": 1779125284,
+    "update_time": 1779125284,
+    "_id": "Location<SEP>Page 14 (page_number)"
+  },
+  "California<SEP>Conditions for Academic Study Extension (list)": {
+    "chunk_ids": [
+      "chunk-1f0d016021da4722163aae51af78f3e8"
+    ],
+    "count": 1,
+    "create_time": 1779125284,
+    "update_time": 1779125284,
+    "_id": "California<SEP>Conditions for Academic Study Extension (list)"
+  },
+  "Apple Inc.<SEP>located in": {
+    "chunk_ids": [
+      "chunk-1f0d016021da4722163aae51af78f3e8",
+      "chunk-c065f506220069885e5102bf3efaedaa",
+      "chunk-8ae14722263e9b0509ad70fd8d35e1f6"
+    ],
+    "count": 3,
+    "create_time": 1779125284,
+    "update_time": 1779125284,
+    "_id": "Apple Inc.<SEP>located in"
+  },
+  "Founded<SEP>GlobalTech Inc.": {
+    "chunk_ids": [
+      "chunk-9e2f86f6632b46ff687444de2038e2f7"
+    ],
+    "count": 1,
+    "create_time": 1779125284,
+    "update_time": 1779125284,
+    "_id": "Founded<SEP>GlobalTech Inc."
+  },
+  "Location<SEP>Page 25 of Master's Curriculum (page_number)": {
+    "chunk_ids": [
+      "chunk-80d950950899e5ab67f9778303e69ac2"
+    ],
+    "count": 1,
+    "create_time": 1779125285,
+    "update_time": 1779125285,
+    "_id": "Location<SEP>Page 25 of Master's Curriculum (page_number)"
+  },
+  "Master's Program Curriculum Framework Table (table)<SEP>Person": {
+    "chunk_ids": [
+      "chunk-9e2f86f6632b46ff687444de2038e2f7"
+    ],
+    "count": 1,
+    "create_time": 1779125285,
+    "update_time": 1779125285,
+    "_id": "Master's Program Curriculum Framework Table (table)<SEP>Person"
+  },
+  "Master's Program Curriculum Framework Table (table)<SEP>Organization": {
+    "chunk_ids": [
+      "chunk-9e2f86f6632b46ff687444de2038e2f7"
+    ],
+    "count": 1,
+    "create_time": 1779125285,
+    "update_time": 1779125285,
+    "_id": "Master's Program Curriculum Framework Table (table)<SEP>Organization"
+  },
+  "John Doe<SEP>works_for": {
+    "chunk_ids": [
+      "chunk-732a71e7ba97c00657dbc1d81ac18b3d",
+      "chunk-98312a6db6b27a6fa37ae8f3e952ac23"
+    ],
+    "count": 2,
+    "create_time": 1779125285,
+    "update_time": 1779125285,
+    "_id": "John Doe<SEP>works_for"
+  },
+  "Location<SEP>Master's Program Curriculum Framework Table (table)": {
+    "chunk_ids": [
+      "chunk-9e2f86f6632b46ff687444de2038e2f7"
+    ],
+    "count": 1,
+    "create_time": 1779125285,
+    "update_time": 1779125285,
+    "_id": "Location<SEP>Master's Program Curriculum Framework Table (table)"
+  },
+  "TechCorp<SEP>located_in": {
+    "chunk_ids": [
+      "chunk-732a71e7ba97c00657dbc1d81ac18b3d",
+      "chunk-f5335acf89efc495bfb402f037ce9c86"
+    ],
+    "count": 2,
+    "create_time": 1779125285,
+    "update_time": 1779125285,
+    "_id": "TechCorp<SEP>located_in"
+  },
+  "Person<SEP>Unnamed_Table (table)": {
+    "chunk_ids": [
+      "chunk-732a71e7ba97c00657dbc1d81ac18b3d"
+    ],
+    "count": 1,
+    "create_time": 1779125286,
+    "update_time": 1779125286,
+    "_id": "Person<SEP>Unnamed_Table (table)"
+  },
+  "Apple Inc.<SEP>founded_by": {
+    "chunk_ids": [
+      "chunk-80d950950899e5ab67f9778303e69ac2"
+    ],
+    "count": 1,
+    "create_time": 1779125286,
+    "update_time": 1779125286,
+    "_id": "Apple Inc.<SEP>founded_by"
+  },
+  "John Doe<SEP>located_in": {
+    "chunk_ids": [
+      "chunk-c9d998031be63b0eb355077b58de6dbd"
+    ],
+    "count": 1,
+    "create_time": 1779125287,
+    "update_time": 1779125287,
+    "_id": "John Doe<SEP>located_in"
+  },
+  "Organization<SEP>Unnamed_Table (table)": {
+    "chunk_ids": [
+      "chunk-732a71e7ba97c00657dbc1d81ac18b3d"
+    ],
+    "count": 1,
+    "create_time": 1779125288,
+    "update_time": 1779125288,
+    "_id": "Organization<SEP>Unnamed_Table (table)"
+  },
+  "Location<SEP>Unnamed_Table (table)": {
+    "chunk_ids": [
+      "chunk-732a71e7ba97c00657dbc1d81ac18b3d"
+    ],
+    "count": 1,
+    "create_time": 1779125289,
+    "update_time": 1779125289,
+    "_id": "Location<SEP>Unnamed_Table (table)"
+  },
+  "Cross-Program Course Credit Table for Information Systems Master's (table)<SEP>John Doe": {
+    "chunk_ids": [
+      "chunk-c9d998031be63b0eb355077b58de6dbd"
+    ],
+    "count": 1,
+    "create_time": 1779125289,
+    "update_time": 1779125289,
+    "_id": "Cross-Program Course Credit Table for Information Systems Master's (table)<SEP>John Doe"
+  },
+  "Length<SEP>Nile River": {
+    "chunk_ids": [
+      "chunk-b69f950e0c9c83e9c659c42b4ff54dcf"
+    ],
+    "count": 1,
+    "create_time": 1779125289,
+    "update_time": 1779125289,
+    "_id": "Length<SEP>Nile River"
+  },
+  "European Union<SEP>founded_by": {
+    "chunk_ids": [
+      "chunk-c9d998031be63b0eb355077b58de6dbd"
+    ],
+    "count": 1,
+    "create_time": 1779125290,
+    "update_time": 1779125290,
+    "_id": "European Union<SEP>founded_by"
+  },
+  "Apple Inc.<SEP>location": {
+    "chunk_ids": [
+      "chunk-80d950950899e5ab67f9778303e69ac2"
+    ],
+    "count": 1,
+    "create_time": 1779125290,
+    "update_time": 1779125290,
+    "_id": "Apple Inc.<SEP>location"
+  },
+  "Empty Table Placeholder (table)<SEP>World Health Organization": {
+    "chunk_ids": [
+      "chunk-ad06e2578f9bc558c154bafbbd0033fe"
+    ],
+    "count": 1,
+    "create_time": 1779125290,
+    "update_time": 1779125290,
+    "_id": "Empty Table Placeholder (table)<SEP>World Health Organization"
+  },
+  "Covid-19<SEP>Empty Table Placeholder (table)": {
+    "chunk_ids": [
+      "chunk-ad06e2578f9bc558c154bafbbd0033fe"
+    ],
+    "count": 1,
+    "create_time": 1779125290,
+    "update_time": 1779125290,
+    "_id": "Covid-19<SEP>Empty Table Placeholder (table)"
+  },
+  "Apple Inc.<SEP>Cupertino": {
+    "chunk_ids": [
+      "chunk-7337b73ce52272bcfd74967844905f53"
+    ],
+    "count": 1,
+    "create_time": 1779125292,
+    "update_time": 1779125292,
+    "_id": "Apple Inc.<SEP>Cupertino"
+  },
+  "European Union<SEP>Headquarters": {
+    "chunk_ids": [
+      "chunk-b69f950e0c9c83e9c659c42b4ff54dcf"
+    ],
+    "count": 1,
+    "create_time": 1779125295,
+    "update_time": 1779125295,
+    "_id": "European Union<SEP>Headquarters"
+  },
+  "European Union<SEP>Page 32 - Credit Allocation Framework (page_number)": {
+    "chunk_ids": [
+      "chunk-b69f950e0c9c83e9c659c42b4ff54dcf"
+    ],
+    "count": 1,
+    "create_time": 1779125299,
+    "update_time": 1779125299,
+    "_id": "European Union<SEP>Page 32 - Credit Allocation Framework (page_number)"
+  },
+  "California<SEP>Master's Program Curriculum in Information Security - Page 33 (table)": {
+    "chunk_ids": [
+      "chunk-7337b73ce52272bcfd74967844905f53"
+    ],
+    "count": 1,
+    "create_time": 1779125299,
+    "update_time": 1779125299,
+    "_id": "California<SEP>Master's Program Curriculum in Information Security - Page 33 (table)"
+  },
+  "Acme Corp<SEP>located_in": {
+    "chunk_ids": [
+      "chunk-98312a6db6b27a6fa37ae8f3e952ac23"
+    ],
+    "count": 1,
+    "create_time": 1779125300,
+    "update_time": 1779125300,
+    "_id": "Acme Corp<SEP>located_in"
+  },
+  "John Doe<SEP>Page 37 (page_number)": {
+    "chunk_ids": [
+      "chunk-98312a6db6b27a6fa37ae8f3e952ac23"
+    ],
+    "count": 1,
+    "create_time": 1779125300,
+    "update_time": 1779125300,
+    "_id": "John Doe<SEP>Page 37 (page_number)"
+  },
+  "Nile River<SEP>Page 32 - Credit Allocation Framework (page_number)": {
+    "chunk_ids": [
+      "chunk-b69f950e0c9c83e9c659c42b4ff54dcf"
+    ],
+    "count": 1,
+    "create_time": 1779125300,
+    "update_time": 1779125300,
+    "_id": "Nile River<SEP>Page 32 - Credit Allocation Framework (page_number)"
+  },
+  "Cross-Program Course Credit Table for Information Systems Master's (table)<SEP>European Union": {
+    "chunk_ids": [
+      "chunk-c9d998031be63b0eb355077b58de6dbd"
+    ],
+    "count": 1,
+    "create_time": 1779125300,
+    "update_time": 1779125300,
+    "_id": "Cross-Program Course Credit Table for Information Systems Master's (table)<SEP>European Union"
+  },
+  "John Doe<SEP>employs": {
+    "chunk_ids": [
+      "chunk-c607a2663553b3a7cfc4f1a947191079"
+    ],
+    "count": 1,
+    "create_time": 1779125300,
+    "update_time": 1779125300,
+    "_id": "John Doe<SEP>employs"
+  },
+  "Apple Inc.<SEP>California": {
+    "chunk_ids": [
+      "chunk-7337b73ce52272bcfd74967844905f53"
+    ],
+    "count": 1,
+    "create_time": 1779125301,
+    "update_time": 1779125301,
+    "_id": "Apple Inc.<SEP>California"
+  },
+  "Cupertino<SEP>Master's Program Curriculum in Information Security - Page 33 (table)": {
+    "chunk_ids": [
+      "chunk-7337b73ce52272bcfd74967844905f53"
+    ],
+    "count": 1,
+    "create_time": 1779125301,
+    "update_time": 1779125301,
+    "_id": "Cupertino<SEP>Master's Program Curriculum in Information Security - Page 33 (table)"
+  },
+  "Acme Corp<SEP>Page 37 (page_number)": {
+    "chunk_ids": [
+      "chunk-98312a6db6b27a6fa37ae8f3e952ac23"
+    ],
+    "count": 1,
+    "create_time": 1779125301,
+    "update_time": 1779125301,
+    "_id": "Acme Corp<SEP>Page 37 (page_number)"
+  },
+  "Apple Inc.<SEP>founded by": {
+    "chunk_ids": [
+      "chunk-4bb0f93963a4f4241e45a1d00a923806",
+      "chunk-0ae530aaefa9ec49181f498b7b850b74"
+    ],
+    "count": 2,
+    "create_time": 1779125302,
+    "update_time": 1779125302,
+    "_id": "Apple Inc.<SEP>founded by"
+  },
+  "CEO of<SEP>Steve Jobs": {
+    "chunk_ids": [
+      "chunk-4bb0f93963a4f4241e45a1d00a923806"
+    ],
+    "count": 1,
+    "create_time": 1779125302,
+    "update_time": 1779125302,
+    "_id": "CEO of<SEP>Steve Jobs"
+  },
+  "John Doe<SEP>resides_in": {
+    "chunk_ids": [
+      "chunk-c607a2663553b3a7cfc4f1a947191079"
+    ],
+    "count": 1,
+    "create_time": 1779125302,
+    "update_time": 1779125302,
+    "_id": "John Doe<SEP>resides_in"
+  },
+  "Credit Allocation for Research and Elective Courses (page_footnote)<SEP>Steve Jobs": {
+    "chunk_ids": [
+      "chunk-4bb0f93963a4f4241e45a1d00a923806"
+    ],
+    "count": 1,
+    "create_time": 1779125303,
+    "update_time": 1779125303,
+    "_id": "Credit Allocation for Research and Elective Courses (page_footnote)<SEP>Steve Jobs"
+  },
+  "Page 42 - Academic Regulations and Course Substitution Guidelines (page_number)<SEP>Person": {
+    "chunk_ids": [
+      "chunk-baba3350335af09f5911105c7d709b7c"
+    ],
+    "count": 1,
+    "create_time": 1779125303,
+    "update_time": 1779125303,
+    "_id": "Page 42 - Academic Regulations and Course Substitution Guidelines (page_number)<SEP>Person"
+  },
+  "Danh mục các môn học chương trình Thạc sĩ Kỹ thuật Máy tính (table)<SEP>John Doe": {
+    "chunk_ids": [
+      "chunk-c607a2663553b3a7cfc4f1a947191079"
+    ],
+    "count": 1,
+    "create_time": 1779125304,
+    "update_time": 1779125304,
+    "_id": "Danh mục các môn học chương trình Thạc sĩ Kỹ thuật Máy tính (table)<SEP>John Doe"
+  },
+  "Apple Inc.<SEP>Credit Allocation for Research and Elective Courses (page_footnote)": {
+    "chunk_ids": [
+      "chunk-4bb0f93963a4f4241e45a1d00a923806"
+    ],
+    "count": 1,
+    "create_time": 1779125304,
+    "update_time": 1779125304,
+    "_id": "Apple Inc.<SEP>Credit Allocation for Research and Elective Courses (page_footnote)"
+  },
+  "Organization<SEP>Page 42 - Academic Regulations and Course Substitution Guidelines (page_number)": {
+    "chunk_ids": [
+      "chunk-baba3350335af09f5911105c7d709b7c"
+    ],
+    "count": 1,
+    "create_time": 1779125304,
+    "update_time": 1779125304,
+    "_id": "Organization<SEP>Page 42 - Academic Regulations and Course Substitution Guidelines (page_number)"
+  },
+  "New York<SEP>empty_table (table)": {
+    "chunk_ids": [
+      "chunk-e5e558ecf5cf98f03186f42aabff5e91"
+    ],
+    "count": 1,
+    "create_time": 1779125304,
+    "update_time": 1779125304,
+    "_id": "New York<SEP>empty_table (table)"
+  },
+  "Eiffel Tower<SEP>empty_table (table)": {
+    "chunk_ids": [
+      "chunk-e5e558ecf5cf98f03186f42aabff5e91"
+    ],
+    "count": 1,
+    "create_time": 1779125304,
+    "update_time": 1779125304,
+    "_id": "Eiffel Tower<SEP>empty_table (table)"
+  },
+  "Equivalent Subjects Mapping Table (table)<SEP>Project X": {
+    "chunk_ids": [
+      "chunk-b6853beacdecc989a2ee0f408ede1fe8"
+    ],
+    "count": 1,
+    "create_time": 1779125304,
+    "update_time": 1779125304,
+    "_id": "Equivalent Subjects Mapping Table (table)<SEP>Project X"
+  },
+  "Credit Allocation for Research Special Topics and Elective Courses (page_footnote)<SEP>John Doe": {
+    "chunk_ids": [
+      "chunk-bcbe2e29548e936cc43ad450cfcbd924"
+    ],
+    "count": 1,
+    "create_time": 1779125304,
+    "update_time": 1779125304,
+    "_id": "Credit Allocation for Research Special Topics and Elective Courses (page_footnote)<SEP>John Doe"
+  },
+  "Danh mục các môn học chương trình Thạc sĩ Kỹ thuật Máy tính (table)<SEP>TechCorp": {
+    "chunk_ids": [
+      "chunk-c607a2663553b3a7cfc4f1a947191079"
+    ],
+    "count": 1,
+    "create_time": 1779125304,
+    "update_time": 1779125304,
+    "_id": "Danh mục các môn học chương trình Thạc sĩ Kỹ thuật Máy tính (table)<SEP>TechCorp"
+  },
+  "Location<SEP>Page 42 - Academic Regulations and Course Substitution Guidelines (page_number)": {
+    "chunk_ids": [
+      "chunk-baba3350335af09f5911105c7d709b7c"
+    ],
+    "count": 1,
+    "create_time": 1779125304,
+    "update_time": 1779125304,
+    "_id": "Location<SEP>Page 42 - Academic Regulations and Course Substitution Guidelines (page_number)"
+  },
+  "Organization<SEP>Thesis Extension Policy Details (list)": {
+    "chunk_ids": [
+      "chunk-ce8774538d11584c40917b36def8ae14"
+    ],
+    "count": 1,
+    "create_time": 1779125304,
+    "update_time": 1779125304,
+    "_id": "Organization<SEP>Thesis Extension Policy Details (list)"
+  },
+  "Equivalent Subjects Mapping Table (table)<SEP>TechNova": {
+    "chunk_ids": [
+      "chunk-b6853beacdecc989a2ee0f408ede1fe8"
+    ],
+    "count": 1,
+    "create_time": 1779125305,
+    "update_time": 1779125305,
+    "_id": "Equivalent Subjects Mapping Table (table)<SEP>TechNova"
+  },
+  "John Doe<SEP>employed by": {
+    "chunk_ids": [
+      "chunk-0cb12968978092d08c88f8602f8557e6"
+    ],
+    "count": 1,
+    "create_time": 1779125305,
+    "update_time": 1779125305,
+    "_id": "John Doe<SEP>employed by"
+  },
+  "Acme Corp<SEP>located in": {
+    "chunk_ids": [
+      "chunk-0cb12968978092d08c88f8602f8557e6"
+    ],
+    "count": 1,
+    "create_time": 1779125305,
+    "update_time": 1779125305,
+    "_id": "Acme Corp<SEP>located in"
+  },
+  "Credit Allocation for Research Special Topics and Elective Courses (page_footnote)<SEP>TechCorp": {
+    "chunk_ids": [
+      "chunk-bcbe2e29548e936cc43ad450cfcbd924"
+    ],
+    "count": 1,
+    "create_time": 1779125305,
+    "update_time": 1779125305,
+    "_id": "Credit Allocation for Research Special Topics and Elective Courses (page_footnote)<SEP>TechCorp"
+  },
+  "Location<SEP>Thesis Extension Policy Details (list)": {
+    "chunk_ids": [
+      "chunk-ce8774538d11584c40917b36def8ae14"
+    ],
+    "count": 1,
+    "create_time": 1779125305,
+    "update_time": 1779125305,
+    "_id": "Location<SEP>Thesis Extension Policy Details (list)"
+  },
+  "Elon Musk<SEP>Founded": {
+    "chunk_ids": [
+      "chunk-66b5b5c77e9ff1a454897bdddf6c029e"
+    ],
+    "count": 1,
+    "create_time": 1779125305,
+    "update_time": 1779125305,
+    "_id": "Elon Musk<SEP>Founded"
+  },
+  "Siemens<SEP>located_in": {
+    "chunk_ids": [
+      "chunk-f0c724e3955b9ca2168e6046a0983356"
+    ],
+    "count": 1,
+    "create_time": 1779125305,
+    "update_time": 1779125305,
+    "_id": "Siemens<SEP>located_in"
+  },
+  "Gerd Homann<SEP>founded_by": {
+    "chunk_ids": [
+      "chunk-f0c724e3955b9ca2168e6046a0983356"
+    ],
+    "count": 1,
+    "create_time": 1779125305,
+    "update_time": 1779125305,
+    "_id": "Gerd Homann<SEP>founded_by"
+  },
+  "Decision Number 605/QĐ-ĐHCNTT (header)<SEP>organization": {
+    "chunk_ids": [
+      "chunk-f0c724e3955b9ca2168e6046a0983356"
+    ],
+    "count": 1,
+    "create_time": 1779125305,
+    "update_time": 1779125305,
+    "_id": "Decision Number 605/QĐ-ĐHCNTT (header)<SEP>organization"
+  },
+  "Acme Corp<SEP>Notice No. 39 on Thesis Protection Extension (header)": {
+    "chunk_ids": [
+      "chunk-0cb12968978092d08c88f8602f8557e6"
+    ],
+    "count": 1,
+    "create_time": 1779125306,
+    "update_time": 1779125306,
+    "_id": "Acme Corp<SEP>Notice No. 39 on Thesis Protection Extension (header)"
+  },
+  "Decision Number 605/QĐ-ĐHCNTT (header)<SEP>location": {
+    "chunk_ids": [
+      "chunk-f0c724e3955b9ca2168e6046a0983356"
+    ],
+    "count": 1,
+    "create_time": 1779125306,
+    "update_time": 1779125306,
+    "_id": "Decision Number 605/QĐ-ĐHCNTT (header)<SEP>location"
+  },
+  "John McCarthy<SEP>developed_by": {
+    "chunk_ids": [
+      "chunk-9e89bf4d047d3c9a123461d1e4736161"
+    ],
+    "count": 1,
+    "create_time": 1779125306,
+    "update_time": 1779125306,
+    "_id": "John McCarthy<SEP>developed_by"
+  },
+  "Information Technology<SEP>part_of": {
+    "chunk_ids": [
+      "chunk-9e89bf4d047d3c9a123461d1e4736161"
+    ],
+    "count": 1,
+    "create_time": 1779125306,
+    "update_time": 1779125306,
+    "_id": "Information Technology<SEP>part_of"
+  },
+  "European Union<SEP>ĐẠI HỌC QUỐC GIA (header)": {
+    "chunk_ids": [
+      "chunk-9e89bf4d047d3c9a123461d1e4736161"
+    ],
+    "count": 1,
+    "create_time": 1779125306,
+    "update_time": 1779125306,
+    "_id": "European Union<SEP>ĐẠI HỌC QUỐC GIA (header)"
+  },
+  "John Doe<SEP>Notice No. 39 on Thesis Protection Extension (header)": {
+    "chunk_ids": [
+      "chunk-0cb12968978092d08c88f8602f8557e6"
+    ],
+    "count": 1,
+    "create_time": 1779125306,
+    "update_time": 1779125306,
+    "_id": "John Doe<SEP>Notice No. 39 on Thesis Protection Extension (header)"
+  },
+  "Tech Corp<SEP>employs": {
+    "chunk_ids": [
+      "chunk-f8730e0a4d15968cfa315fa0aa874df0"
+    ],
+    "count": 1,
+    "create_time": 1779125306,
+    "update_time": 1779125306,
+    "_id": "Tech Corp<SEP>employs"
+  },
+  "Silicon Valley<SEP>located_in": {
+    "chunk_ids": [
+      "chunk-f8730e0a4d15968cfa315fa0aa874df0"
+    ],
+    "count": 1,
+    "create_time": 1779125306,
+    "update_time": 1779125306,
+    "_id": "Silicon Valley<SEP>located_in"
+  },
+  "Artificial Intelligence<SEP>ĐẠI HỌC QUỐC GIA (header)": {
+    "chunk_ids": [
+      "chunk-9e89bf4d047d3c9a123461d1e4736161"
+    ],
+    "count": 1,
+    "create_time": 1779125307,
+    "update_time": 1779125307,
+    "_id": "Artificial Intelligence<SEP>ĐẠI HỌC QUỐC GIA (header)"
+  },
+  "Amazon<SEP>Jeff Bezos": {
+    "chunk_ids": [
+      "chunk-95c1169243018f0c8dffbcc79efad744"
+    ],
+    "count": 1,
+    "create_time": 1779125307,
+    "update_time": 1779125307,
+    "_id": "Amazon<SEP>Jeff Bezos"
+  },
+  "TP.HCM (header)<SEP>Tech Corp": {
+    "chunk_ids": [
+      "chunk-f8730e0a4d15968cfa315fa0aa874df0"
+    ],
+    "count": 1,
+    "create_time": 1779125307,
+    "update_time": 1779125307,
+    "_id": "TP.HCM (header)<SEP>Tech Corp"
+  },
+  "Seattle<SEP>Trường Đại học Công nghệ Thông tin (header)": {
+    "chunk_ids": [
+      "chunk-95c1169243018f0c8dffbcc79efad744"
+    ],
+    "count": 1,
+    "create_time": 1779125307,
+    "update_time": 1779125307,
+    "_id": "Seattle<SEP>Trường Đại học Công nghệ Thông tin (header)"
+  },
+  "Blue Origin<SEP>Jeff Bezos": {
+    "chunk_ids": [
+      "chunk-95c1169243018f0c8dffbcc79efad744"
+    ],
+    "count": 1,
+    "create_time": 1779125307,
+    "update_time": 1779125307,
+    "_id": "Blue Origin<SEP>Jeff Bezos"
+  },
+  "Silicon Valley<SEP>TP.HCM (header)": {
+    "chunk_ids": [
+      "chunk-f8730e0a4d15968cfa315fa0aa874df0"
+    ],
+    "count": 1,
+    "create_time": 1779125308,
+    "update_time": 1779125308,
+    "_id": "Silicon Valley<SEP>TP.HCM (header)"
+  },
+  "Apple Inc.<SEP>Headquarters": {
+    "chunk_ids": [
+      "chunk-086751713da2bf5f81e854cf97dce238",
+      "chunk-71b1bd96efc4c6aa0ba6e5eb06284cf1"
+    ],
+    "count": 2,
+    "create_time": 1779125308,
+    "update_time": 1779125308,
+    "_id": "Apple Inc.<SEP>Headquarters"
+  },
+  "Cupertino<SEP>University Ideological Motto (header)": {
+    "chunk_ids": [
+      "chunk-086751713da2bf5f81e854cf97dce238"
+    ],
+    "count": 1,
+    "create_time": 1779125308,
+    "update_time": 1779125308,
+    "_id": "Cupertino<SEP>University Ideological Motto (header)"
+  },
+  "1976<SEP>University Ideological Motto (header)": {
+    "chunk_ids": [
+      "chunk-086751713da2bf5f81e854cf97dce238"
+    ],
+    "count": 1,
+    "create_time": 1779125308,
+    "update_time": 1779125308,
+    "_id": "1976<SEP>University Ideological Motto (header)"
+  },
+  "John Doe<SEP>developed": {
+    "chunk_ids": [
+      "chunk-f5335acf89efc495bfb402f037ce9c86",
+      "chunk-ec493a9692ae952269f0f74c9ffd5a36"
+    ],
+    "count": 2,
+    "create_time": 1779125308,
+    "update_time": 1779125308,
+    "_id": "John Doe<SEP>developed"
+  },
+  "Amazon<SEP>Seattle": {
+    "chunk_ids": [
+      "chunk-95c1169243018f0c8dffbcc79efad744"
+    ],
+    "count": 1,
+    "create_time": 1779125308,
+    "update_time": 1779125308,
+    "_id": "Amazon<SEP>Seattle"
+  },
+  "Jeff Bezos<SEP>Trường Đại học Công nghệ Thông tin (header)": {
+    "chunk_ids": [
+      "chunk-95c1169243018f0c8dffbcc79efad744"
+    ],
+    "count": 1,
+    "create_time": 1779125308,
+    "update_time": 1779125308,
+    "_id": "Jeff Bezos<SEP>Trường Đại học Công nghệ Thông tin (header)"
+  },
+  "CVHT Responsibilities and Reporting Requirements (list)<SEP>Person": {
+    "chunk_ids": [
+      "chunk-f5335acf89efc495bfb402f037ce9c86"
+    ],
+    "count": 1,
+    "create_time": 1779125308,
+    "update_time": 1779125308,
+    "_id": "CVHT Responsibilities and Reporting Requirements (list)<SEP>Person"
+  },
+  "CVHT Responsibilities and Reporting Requirements (list)<SEP>Organization": {
+    "chunk_ids": [
+      "chunk-f5335acf89efc495bfb402f037ce9c86"
+    ],
+    "count": 1,
+    "create_time": 1779125309,
+    "update_time": 1779125309,
+    "_id": "CVHT Responsibilities and Reporting Requirements (list)<SEP>Organization"
+  },
+  "Neural Network<SEP>located_in": {
+    "chunk_ids": [
+      "chunk-412d7ac757951df584de37382aac8e38"
+    ],
+    "count": 1,
+    "create_time": 1779125309,
+    "update_time": 1779125309,
+    "_id": "Neural Network<SEP>located_in"
+  },
+  "Blue Origin<SEP>Trường Đại học Công nghệ Thông tin (header)": {
+    "chunk_ids": [
+      "chunk-95c1169243018f0c8dffbcc79efad744"
+    ],
+    "count": 1,
+    "create_time": 1779125309,
+    "update_time": 1779125309,
+    "_id": "Blue Origin<SEP>Trường Đại học Công nghệ Thông tin (header)"
+  },
+  "CVHT Responsibilities and Reporting Requirements (list)<SEP>Location": {
+    "chunk_ids": [
+      "chunk-f5335acf89efc495bfb402f037ce9c86"
+    ],
+    "count": 1,
+    "create_time": 1779125309,
+    "update_time": 1779125309,
+    "_id": "CVHT Responsibilities and Reporting Requirements (list)<SEP>Location"
+  },
+  "European Union<SEP>headquartered_in": {
+    "chunk_ids": [
+      "chunk-c4058c290ae393d15ba5434b9b5b590b"
+    ],
+    "count": 1,
+    "create_time": 1779125309,
+    "update_time": 1779125309,
+    "_id": "European Union<SEP>headquartered_in"
+  },
+  "Amazon<SEP>Trường Đại học Công nghệ Thông tin (header)": {
+    "chunk_ids": [
+      "chunk-95c1169243018f0c8dffbcc79efad744"
+    ],
+    "count": 1,
+    "create_time": 1779125309,
+    "update_time": 1779125309,
+    "_id": "Amazon<SEP>Trường Đại học Công nghệ Thông tin (header)"
+  },
+  "Google DeepMind<SEP>subsidiary_of": {
+    "chunk_ids": [
+      "chunk-c4058c290ae393d15ba5434b9b5b590b"
+    ],
+    "count": 1,
+    "create_time": 1779125309,
+    "update_time": 1779125309,
+    "_id": "Google DeepMind<SEP>subsidiary_of"
+  },
+  "John Doe<SEP>developed_by": {
+    "chunk_ids": [
+      "chunk-412d7ac757951df584de37382aac8e38"
+    ],
+    "count": 1,
+    "create_time": 1779125309,
+    "update_time": 1779125309,
+    "_id": "John Doe<SEP>developed_by"
+  },
+  "Artificial Intelligence<SEP>Regulation on Scientific Publication Support for Students and Researchers (list)": {
+    "chunk_ids": [
+      "chunk-c4058c290ae393d15ba5434b9b5b590b"
+    ],
+    "count": 1,
+    "create_time": 1779125310,
+    "update_time": 1779125310,
+    "_id": "Artificial Intelligence<SEP>Regulation on Scientific Publication Support for Students and Researchers (list)"
+  },
+  "Bảng Kê Thanh Toán Hỗ Trợ Bài Báo Nghiên Cứu Khoa Học (table)<SEP>Organization": {
+    "chunk_ids": [
+      "chunk-4ea08f25fe53639be3a32f9d3143ee3c"
+    ],
+    "count": 1,
+    "create_time": 1779125310,
+    "update_time": 1779125310,
+    "_id": "Bảng Kê Thanh Toán Hỗ Trợ Bài Báo Nghiên Cứu Khoa Học (table)<SEP>Organization"
+  },
+  "Bảng Kê Thanh Toán Hỗ Trợ Bài Báo Nghiên Cứu Khoa Học (table)<SEP>Person": {
+    "chunk_ids": [
+      "chunk-4ea08f25fe53639be3a32f9d3143ee3c"
+    ],
+    "count": 1,
+    "create_time": 1779125312,
+    "update_time": 1779125312,
+    "_id": "Bảng Kê Thanh Toán Hỗ Trợ Bài Báo Nghiên Cứu Khoa Học (table)<SEP>Person"
+  },
+  "Bảng tổng hợp thống kê số bài báo khoa học đề xuất nhận hỗ trợ nghiên cứu (table)<SEP>Cupertino": {
+    "chunk_ids": [
+      "chunk-c065f506220069885e5102bf3efaedaa"
+    ],
+    "count": 1,
+    "create_time": 1779125312,
+    "update_time": 1779125312,
+    "_id": "Bảng tổng hợp thống kê số bài báo khoa học đề xuất nhận hỗ trợ nghiên cứu (table)<SEP>Cupertino"
+  },
+  "CVHT Evaluation Criteria and Consequences (list)<SEP>John Doe": {
+    "chunk_ids": [
+      "chunk-412d7ac757951df584de37382aac8e38"
+    ],
+    "count": 1,
+    "create_time": 1779125326,
+    "update_time": 1779125326,
+    "_id": "CVHT Evaluation Criteria and Consequences (list)<SEP>John Doe"
+  },
+  "European Union<SEP>Regulation on Scientific Publication Support for Students and Researchers (list)": {
+    "chunk_ids": [
+      "chunk-c4058c290ae393d15ba5434b9b5b590b"
+    ],
+    "count": 1,
+    "create_time": 1779125342,
+    "update_time": 1779125342,
+    "_id": "European Union<SEP>Regulation on Scientific Publication Support for Students and Researchers (list)"
+  },
+  "Apple Inc.<SEP>headquartered_in": {
+    "chunk_ids": [
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378"
+    ],
+    "count": 1,
+    "create_time": 1779125342,
+    "update_time": 1779125342,
+    "_id": "Apple Inc.<SEP>headquartered_in"
+  },
+  "CEO_of<SEP>Tim Cook": {
+    "chunk_ids": [
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378"
+    ],
+    "count": 1,
+    "create_time": 1779125343,
+    "update_time": 1779125343,
+    "_id": "CEO_of<SEP>Tim Cook"
+  },
+  "developed_by<SEP>iPhone": {
+    "chunk_ids": [
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378"
+    ],
+    "count": 1,
+    "create_time": 1779125346,
+    "update_time": 1779125346,
+    "_id": "developed_by<SEP>iPhone"
+  },
+  "Cupertino<SEP>located in": {
+    "chunk_ids": [
+      "chunk-8ae14722263e9b0509ad70fd8d35e1f6"
+    ],
+    "count": 1,
+    "create_time": 1779125346,
+    "update_time": 1779125346,
+    "_id": "Cupertino<SEP>located in"
+  },
+  "Academic Encouragement Scholarship for PhD Candidates (Type 2) (table)<SEP>Organization": {
+    "chunk_ids": [
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378"
+    ],
+    "count": 1,
+    "create_time": 1779125346,
+    "update_time": 1779125346,
+    "_id": "Academic Encouragement Scholarship for PhD Candidates (Type 2) (table)<SEP>Organization"
+  },
+  "Academic Encouragement Scholarship for PhD Candidates (Type 2) (table)<SEP>Location": {
+    "chunk_ids": [
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378"
+    ],
+    "count": 1,
+    "create_time": 1779125347,
+    "update_time": 1779125347,
+    "_id": "Academic Encouragement Scholarship for PhD Candidates (Type 2) (table)<SEP>Location"
+  },
+  "John Doe<SEP>Types of Master's Programs at University of Information Technology (list)": {
+    "chunk_ids": [
+      "chunk-daf86420a5975032d6005c7dc2fadd63"
+    ],
+    "count": 1,
+    "create_time": 1779125349,
+    "update_time": 1779125349,
+    "_id": "John Doe<SEP>Types of Master's Programs at University of Information Technology (list)"
+  },
+  "Academic Encouragement Scholarship for PhD Candidates (Type 2) (table)<SEP>Person": {
+    "chunk_ids": [
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378"
+    ],
+    "count": 1,
+    "create_time": 1779125349,
+    "update_time": 1779125349,
+    "_id": "Academic Encouragement Scholarship for PhD Candidates (Type 2) (table)<SEP>Person"
+  },
+  "Acme Corp<SEP>Types of Master's Programs at University of Information Technology (list)": {
+    "chunk_ids": [
+      "chunk-daf86420a5975032d6005c7dc2fadd63"
+    ],
+    "count": 1,
+    "create_time": 1779125349,
+    "update_time": 1779125349,
+    "_id": "Acme Corp<SEP>Types of Master's Programs at University of Information Technology (list)"
+  },
+  "New York<SEP>Types of Master's Programs at University of Information Technology (list)": {
+    "chunk_ids": [
+      "chunk-daf86420a5975032d6005c7dc2fadd63"
+    ],
+    "count": 1,
+    "create_time": 1779125351,
+    "update_time": 1779125351,
+    "_id": "New York<SEP>Types of Master's Programs at University of Information Technology (list)"
+  },
+  "Employed<SEP>John Doe": {
+    "chunk_ids": [
+      "chunk-483748684a0878ed3fd34d5d10fa2788"
+    ],
+    "count": 1,
+    "create_time": 1779125351,
+    "update_time": 1779125351,
+    "_id": "Employed<SEP>John Doe"
+  },
+  "Academic Encouragement Scholarship for PhD Candidates (Type 2) (table)<SEP>Product": {
+    "chunk_ids": [
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378"
+    ],
+    "count": 1,
+    "create_time": 1779125352,
+    "update_time": 1779125352,
+    "_id": "Academic Encouragement Scholarship for PhD Candidates (Type 2) (table)<SEP>Product"
+  },
+  "Học viên (header)<SEP>John Doe": {
+    "chunk_ids": [
+      "chunk-483748684a0878ed3fd34d5d10fa2788"
+    ],
+    "count": 1,
+    "create_time": 1779125354,
+    "update_time": 1779125354,
+    "_id": "Học viên (header)<SEP>John Doe"
+  },
+  "Học viên (header)<SEP>TechCorp": {
+    "chunk_ids": [
+      "chunk-483748684a0878ed3fd34d5d10fa2788"
+    ],
+    "count": 1,
+    "create_time": 1779125354,
+    "update_time": 1779125354,
+    "_id": "Học viên (header)<SEP>TechCorp"
+  },
+  "Apple Inc.<SEP>headquarters location": {
+    "chunk_ids": [
+      "chunk-0ae530aaefa9ec49181f498b7b850b74"
+    ],
+    "count": 1,
+    "create_time": 1779125354,
+    "update_time": 1779125354,
+    "_id": "Apple Inc.<SEP>headquarters location"
+  },
+  "Bảng Tổng Hợp Thống Kê Bài Báo Khoa Học Đề Xuất Nhận Hỗ Trợ Nghiên Cứu (table)<SEP>Cupertino": {
+    "chunk_ids": [
+      "chunk-8ae14722263e9b0509ad70fd8d35e1f6"
+    ],
+    "count": 1,
+    "create_time": 1779125355,
+    "update_time": 1779125355,
+    "_id": "Bảng Tổng Hợp Thống Kê Bài Báo Khoa Học Đề Xuất Nhận Hỗ Trợ Nghiên Cứu (table)<SEP>Cupertino"
+  },
+  "Organization<SEP>University of Information Technology (header)": {
+    "chunk_ids": [
+      "chunk-0ae530aaefa9ec49181f498b7b850b74"
+    ],
+    "count": 1,
+    "create_time": 1779125355,
+    "update_time": 1779125355,
+    "_id": "Organization<SEP>University of Information Technology (header)"
+  },
+  "Cupertino<SEP>located_in": {
+    "chunk_ids": [
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378"
+    ],
+    "count": 1,
+    "create_time": 1779125356,
+    "update_time": 1779125356,
+    "_id": "Cupertino<SEP>located_in"
+  },
+  "Bảng Tổng Hợp Thống Kê Bài Báo Khoa Học Đề Xuất Nhận Hỗ Trợ Nghiên Cứu (table)<SEP>California": {
+    "chunk_ids": [
+      "chunk-8ae14722263e9b0509ad70fd8d35e1f6"
+    ],
+    "count": 1,
+    "create_time": 1779125356,
+    "update_time": 1779125356,
+    "_id": "Bảng Tổng Hợp Thống Kê Bài Báo Khoa Học Đề Xuất Nhận Hỗ Trợ Nghiên Cứu (table)<SEP>California"
+  },
+  "12345<SEP>CEO_of": {
+    "chunk_ids": [
+      "chunk-1b7f0b6645ea14152521c660a6ef69ec"
+    ],
+    "count": 1,
+    "create_time": 1779125356,
+    "update_time": 1779125356,
+    "_id": "12345<SEP>CEO_of"
+  },
+  "67890<SEP>Located_in": {
+    "chunk_ids": [
+      "chunk-1b7f0b6645ea14152521c660a6ef69ec"
+    ],
+    "count": 1,
+    "create_time": 1779125360,
+    "update_time": 1779125360,
+    "_id": "67890<SEP>Located_in"
+  },
+  "Học viên (header)<SEP>Silicon Valley": {
+    "chunk_ids": [
+      "chunk-483748684a0878ed3fd34d5d10fa2788"
+    ],
+    "count": 1,
+    "create_time": 1779125364,
+    "update_time": 1779125364,
+    "_id": "Học viên (header)<SEP>Silicon Valley"
+  },
+  "Location<SEP>Độc lập - Tự do - Hạnh phúc (header)": {
+    "chunk_ids": [
+      "chunk-1b7f0b6645ea14152521c660a6ef69ec"
+    ],
+    "count": 1,
+    "create_time": 1779125364,
+    "update_time": 1779125364,
+    "_id": "Location<SEP>Độc lập - Tự do - Hạnh phúc (header)"
+  },
+  "Greta Thunberg<SEP>activist_for": {
+    "chunk_ids": [
+      "chunk-613c8deecb882a56a272ab2e074fec54"
+    ],
+    "count": 1,
+    "create_time": 1779125364,
+    "update_time": 1779125364,
+    "_id": "Greta Thunberg<SEP>activist_for"
+  },
+  "Person<SEP>University of Information Technology (header)": {
+    "chunk_ids": [
+      "chunk-0ae530aaefa9ec49181f498b7b850b74"
+    ],
+    "count": 1,
+    "create_time": 1779125364,
+    "update_time": 1779125364,
+    "_id": "Person<SEP>University of Information Technology (header)"
+  },
+  "Organization<SEP>Độc lập - Tự do - Hạnh phúc (header)": {
+    "chunk_ids": [
+      "chunk-1b7f0b6645ea14152521c660a6ef69ec"
+    ],
+    "count": 1,
+    "create_time": 1779125365,
+    "update_time": 1779125365,
+    "_id": "Organization<SEP>Độc lập - Tự do - Hạnh phúc (header)"
+  },
+  "Greenpeace International<SEP>founded_by": {
+    "chunk_ids": [
+      "chunk-613c8deecb882a56a272ab2e074fec54"
+    ],
+    "count": 1,
+    "create_time": 1779125365,
+    "update_time": 1779125365,
+    "_id": "Greenpeace International<SEP>founded_by"
+  },
+  "Founded<SEP>John Doe": {
+    "chunk_ids": [
+      "chunk-645f89b4a850534d575d984c996f8c34",
+      "chunk-ce24f6fc05c42d467a5cf5fc10a59d92"
+    ],
+    "count": 2,
+    "create_time": 1779125366,
+    "update_time": 1779125366,
+    "_id": "Founded<SEP>John Doe"
+  },
+  "Acme Corp<SEP>Located In": {
+    "chunk_ids": [
+      "chunk-645f89b4a850534d575d984c996f8c34"
+    ],
+    "count": 1,
+    "create_time": 1779125367,
+    "update_time": 1779125367,
+    "_id": "Acme Corp<SEP>Located In"
+  },
+  "Person<SEP>Độc lập - Tự do - Hạnh phúc (header)": {
+    "chunk_ids": [
+      "chunk-1b7f0b6645ea14152521c660a6ef69ec"
+    ],
+    "count": 1,
+    "create_time": 1779125367,
+    "update_time": 1779125367,
+    "_id": "Person<SEP>Độc lập - Tự do - Hạnh phúc (header)"
+  },
+  "Master's Training Program Structure and Credit Requirements (list)<SEP>Organization": {
+    "chunk_ids": [
+      "chunk-645f89b4a850534d575d984c996f8c34"
+    ],
+    "count": 1,
+    "create_time": 1779125367,
+    "update_time": 1779125367,
+    "_id": "Master's Training Program Structure and Credit Requirements (list)<SEP>Organization"
+  },
+  "Location<SEP>Master's Training Program Structure and Credit Requirements (list)": {
+    "chunk_ids": [
+      "chunk-645f89b4a850534d575d984c996f8c34"
+    ],
+    "count": 1,
+    "create_time": 1779125368,
+    "update_time": 1779125368,
+    "_id": "Location<SEP>Master's Training Program Structure and Credit Requirements (list)"
+  },
+  "LocatedIn<SEP>XYZ Corp": {
+    "chunk_ids": [
+      "chunk-390d36b439394e20a231223219ef0a97"
+    ],
+    "count": 1,
+    "create_time": 1779125368,
+    "update_time": 1779125368,
+    "_id": "LocatedIn<SEP>XYZ Corp"
+  },
+  "Apple Inc.<SEP>founded": {
+    "chunk_ids": [
+      "chunk-f53fe2eabd63079e7c8da0aabb8606b8"
+    ],
+    "count": 1,
+    "create_time": 1779125369,
+    "update_time": 1779125369,
+    "_id": "Apple Inc.<SEP>founded"
+  },
+  "Date and Location Header (header)<SEP>Person": {
+    "chunk_ids": [
+      "chunk-613c8deecb882a56a272ab2e074fec54"
+    ],
+    "count": 1,
+    "create_time": 1779125369,
+    "update_time": 1779125369,
+    "_id": "Date and Location Header (header)<SEP>Person"
+  },
+  "Organization<SEP>Điều kiện Đăng ký Chương trình Song ngành (list)": {
+    "chunk_ids": [
+      "chunk-f53fe2eabd63079e7c8da0aabb8606b8"
+    ],
+    "count": 1,
+    "create_time": 1779125369,
+    "update_time": 1779125369,
+    "_id": "Organization<SEP>Điều kiện Đăng ký Chương trình Song ngành (list)"
+  },
+  "Apple Inc.<SEP>located_in": {
+    "chunk_ids": [
+      "chunk-f53fe2eabd63079e7c8da0aabb8606b8",
+      "chunk-2562c639bccca05d357c46fd18b7f439"
+    ],
+    "count": 2,
+    "create_time": 1779125370,
+    "update_time": 1779125370,
+    "_id": "Apple Inc.<SEP>located_in"
+  },
+  "Person<SEP>Điều kiện Đăng ký Chương trình Song ngành (list)": {
+    "chunk_ids": [
+      "chunk-f53fe2eabd63079e7c8da0aabb8606b8"
+    ],
+    "count": 1,
+    "create_time": 1779125370,
+    "update_time": 1779125370,
+    "_id": "Person<SEP>Điều kiện Đăng ký Chương trình Song ngành (list)"
+  },
+  "Date and Location Header (header)<SEP>Organization": {
+    "chunk_ids": [
+      "chunk-613c8deecb882a56a272ab2e074fec54"
+    ],
+    "count": 1,
+    "create_time": 1779125370,
+    "update_time": 1779125370,
+    "_id": "Date and Location Header (header)<SEP>Organization"
+  },
+  "Location<SEP>Điều kiện Đăng ký Chương trình Song ngành (list)": {
+    "chunk_ids": [
+      "chunk-f53fe2eabd63079e7c8da0aabb8606b8"
+    ],
+    "count": 1,
+    "create_time": 1779125371,
+    "update_time": 1779125371,
+    "_id": "Location<SEP>Điều kiện Đăng ký Chương trình Song ngành (list)"
+  },
+  "Person<SEP>Thesis Evaluation Criteria (list)": {
+    "chunk_ids": [
+      "chunk-71b1bd96efc4c6aa0ba6e5eb06284cf1"
+    ],
+    "count": 1,
+    "create_time": 1779125371,
+    "update_time": 1779125371,
+    "_id": "Person<SEP>Thesis Evaluation Criteria (list)"
+  },
+  "Course Evaluation Criteria for Master's Program (list)<SEP>Organization": {
+    "chunk_ids": [
+      "chunk-3dd67506561a0a88acf8d2801394a317"
+    ],
+    "count": 1,
+    "create_time": 1779125371,
+    "update_time": 1779125371,
+    "_id": "Course Evaluation Criteria for Master's Program (list)<SEP>Organization"
+  },
+  "Steve Jobs<SEP>founded": {
+    "chunk_ids": [
+      "chunk-3ad5534dff46d7e902462d596172ba68"
+    ],
+    "count": 1,
+    "create_time": 1779125372,
+    "update_time": 1779125372,
+    "_id": "Steve Jobs<SEP>founded"
+  },
+  "Organization<SEP>Thesis Evaluation Criteria (list)": {
+    "chunk_ids": [
+      "chunk-71b1bd96efc4c6aa0ba6e5eb06284cf1"
+    ],
+    "count": 1,
+    "create_time": 1779125372,
+    "update_time": 1779125372,
+    "_id": "Organization<SEP>Thesis Evaluation Criteria (list)"
+  },
+  "LocatedIn<SEP>TechCorp": {
+    "chunk_ids": [
+      "chunk-ce24f6fc05c42d467a5cf5fc10a59d92"
+    ],
+    "count": 1,
+    "create_time": 1779125386,
+    "update_time": 1779125386,
+    "_id": "LocatedIn<SEP>TechCorp"
+  },
+  "John Doe<SEP>Thesis Topic and Advisor Adjustment Procedures (list)": {
+    "chunk_ids": [
+      "chunk-ce24f6fc05c42d467a5cf5fc10a59d92"
+    ],
+    "count": 1,
+    "create_time": 1779125388,
+    "update_time": 1779125388,
+    "_id": "John Doe<SEP>Thesis Topic and Advisor Adjustment Procedures (list)"
+  },
+  "New York<SEP>located_in": {
+    "chunk_ids": [
+      "chunk-3ad5534dff46d7e902462d596172ba68"
+    ],
+    "count": 1,
+    "create_time": 1779125388,
+    "update_time": 1779125388,
+    "_id": "New York<SEP>located_in"
+  },
+  "Apple Inc.<SEP>Steve Jobs": {
+    "chunk_ids": [
+      "chunk-3dd67506561a0a88acf8d2801394a317"
+    ],
+    "count": 1,
+    "create_time": 1779125388,
+    "update_time": 1779125388,
+    "_id": "Apple Inc.<SEP>Steve Jobs"
+  },
+  "TechCorp<SEP>Thesis Topic and Advisor Adjustment Procedures (list)": {
+    "chunk_ids": [
+      "chunk-ce24f6fc05c42d467a5cf5fc10a59d92"
+    ],
+    "count": 1,
+    "create_time": 1779125389,
+    "update_time": 1779125389,
+    "_id": "TechCorp<SEP>Thesis Topic and Advisor Adjustment Procedures (list)"
+  },
+  "Cupertino<SEP>Thesis Evaluation Committee Guidelines (list)": {
+    "chunk_ids": [
+      "chunk-8a1a01c583b5c541987140599e325699"
+    ],
+    "count": 1,
+    "create_time": 1779125389,
+    "update_time": 1779125389,
+    "_id": "Cupertino<SEP>Thesis Evaluation Committee Guidelines (list)"
+  },
+  "California<SEP>Thesis Evaluation Committee Guidelines (list)": {
+    "chunk_ids": [
+      "chunk-8a1a01c583b5c541987140599e325699"
+    ],
+    "count": 1,
+    "create_time": 1779125389,
+    "update_time": 1779125389,
+    "_id": "California<SEP>Thesis Evaluation Committee Guidelines (list)"
+  },
+  "Company A<SEP>employs": {
+    "chunk_ids": [
+      "chunk-ec493a9692ae952269f0f74c9ffd5a36"
+    ],
+    "count": 1,
+    "create_time": 1779125389,
+    "update_time": 1779125389,
+    "_id": "Company A<SEP>employs"
+  },
+  "Company A<SEP>Thesis Defense and Evaluation Procedures (page_number)": {
+    "chunk_ids": [
+      "chunk-ec493a9692ae952269f0f74c9ffd5a36"
+    ],
+    "count": 1,
+    "create_time": 1779125390,
+    "update_time": 1779125390,
+    "_id": "Company A<SEP>Thesis Defense and Evaluation Procedures (page_number)"
+  },
+  "John Doe<SEP>Thesis Defense and Evaluation Procedures (page_number)": {
+    "chunk_ids": [
+      "chunk-ec493a9692ae952269f0f74c9ffd5a36"
+    ],
+    "count": 1,
+    "create_time": 1779125391,
+    "update_time": 1779125391,
+    "_id": "John Doe<SEP>Thesis Defense and Evaluation Procedures (page_number)"
+  },
+  "New York<SEP>Thesis Supervisor Qualification Criteria (list)": {
+    "chunk_ids": [
+      "chunk-3ad5534dff46d7e902462d596172ba68"
+    ],
+    "count": 1,
+    "create_time": 1779125391,
+    "update_time": 1779125391,
+    "_id": "New York<SEP>Thesis Supervisor Qualification Criteria (list)"
+  },
+  "John Doe<SEP>employed_by": {
+    "chunk_ids": [
+      "chunk-2562c639bccca05d357c46fd18b7f439"
+    ],
+    "count": 1,
+    "create_time": 1779125392,
+    "update_time": 1779125392,
+    "_id": "John Doe<SEP>employed_by"
+  },
+  "Project X<SEP>Thesis Defense and Evaluation Procedures (page_number)": {
+    "chunk_ids": [
+      "chunk-ec493a9692ae952269f0f74c9ffd5a36"
+    ],
+    "count": 1,
+    "create_time": 1779125392,
+    "update_time": 1779125392,
+    "_id": "Project X<SEP>Thesis Defense and Evaluation Procedures (page_number)"
+  },
+  "Page 94 (page_number)<SEP>Élise Dubois": {
+    "chunk_ids": [
+      "chunk-2562c639bccca05d357c46fd18b7f439"
+    ],
+    "count": 1,
+    "create_time": 1779125392,
+    "update_time": 1779125392,
+    "_id": "Page 94 (page_number)<SEP>Élise Dubois"
+  },
+  "Located In<SEP>XYZ Corporation": {
+    "chunk_ids": [
+      "chunk-1d4510d4d62115dc898228b60f507615"
+    ],
+    "count": 1,
+    "create_time": 1779125392,
+    "update_time": 1779125392,
+    "_id": "Located In<SEP>XYZ Corporation"
+  },
+  "Apple Inc.<SEP>Founded": {
+    "chunk_ids": [
+      "chunk-71b1bd96efc4c6aa0ba6e5eb06284cf1"
+    ],
+    "count": 1,
+    "create_time": 1779125392,
+    "update_time": 1779125392,
+    "_id": "Apple Inc.<SEP>Founded"
+  },
+  "Page 97 (page_number)<SEP>École Polytechnique Fédérale de Lausanne": {
+    "chunk_ids": [
+      "chunk-9ab39b15f5d23acf8f9928924d1ca748"
+    ],
+    "count": 1,
+    "create_time": 1779125393,
+    "update_time": 1779125393,
+    "_id": "Page 97 (page_number)<SEP>École Polytechnique Fédérale de Lausanne"
+  },
+  "John Doe<SEP>Page 94 (page_number)": {
+    "chunk_ids": [
+      "chunk-2562c639bccca05d357c46fd18b7f439"
+    ],
+    "count": 1,
+    "create_time": 1779125393,
+    "update_time": 1779125393,
+    "_id": "John Doe<SEP>Page 94 (page_number)"
+  },
+  "José Mourinho<SEP>Page 97 (page_number)": {
+    "chunk_ids": [
+      "chunk-9ab39b15f5d23acf8f9928924d1ca748"
+    ],
+    "count": 1,
+    "create_time": 1779125394,
+    "update_time": 1779125394,
+    "_id": "José Mourinho<SEP>Page 97 (page_number)"
+  },
+  "Academic Misconduct and Disciplinary Actions (list)<SEP>John Doe": {
+    "chunk_ids": [
+      "chunk-1d4510d4d62115dc898228b60f507615"
+    ],
+    "count": 1,
+    "create_time": 1779125394,
+    "update_time": 1779125394,
+    "_id": "Academic Misconduct and Disciplinary Actions (list)<SEP>John Doe"
+  },
+  "Eiffel Tower<SEP>Training Program Requirements List (list)": {
+    "chunk_ids": [
+      "chunk-1a79d4419589ab1475876d5797c6d507"
+    ],
+    "count": 1,
+    "create_time": 1779125394,
+    "update_time": 1779125394,
+    "_id": "Eiffel Tower<SEP>Training Program Requirements List (list)"
+  },
+  "New York<SEP>located in": {
+    "chunk_ids": [
+      "chunk-27b39e295e45ea7abc37185ce1fa0bf4"
+    ],
+    "count": 1,
+    "create_time": 1779125394,
+    "update_time": 1779125394,
+    "_id": "New York<SEP>located in"
+  },
+  "Apple Inc.<SEP>Thesis Supervisor Qualification Criteria (list)": {
+    "chunk_ids": [
+      "chunk-3ad5534dff46d7e902462d596172ba68"
+    ],
+    "count": 1,
+    "create_time": 1779125394,
+    "update_time": 1779125394,
+    "_id": "Apple Inc.<SEP>Thesis Supervisor Qualification Criteria (list)"
+  },
+  "1945<SEP>founded in": {
+    "chunk_ids": [
+      "chunk-27b39e295e45ea7abc37185ce1fa0bf4"
+    ],
+    "count": 1,
+    "create_time": 1779125394,
+    "update_time": 1779125394,
+    "_id": "1945<SEP>founded in"
+  },
+  "Quy định về trách nhiệm và quy trình điều chỉnh quy chế (list)<SEP>United Nations": {
+    "chunk_ids": [
+      "chunk-27b39e295e45ea7abc37185ce1fa0bf4"
+    ],
+    "count": 1,
+    "create_time": 1779125395,
+    "update_time": 1779125395,
+    "_id": "Quy định về trách nhiệm và quy trình điều chỉnh quy chế (list)<SEP>United Nations"
+  },
+  "PERSON<SEP>Page 101 (page_number)": {
+    "chunk_ids": [
+      "chunk-8b13ab8467633205566594863cef1e51"
+    ],
+    "count": 1,
+    "create_time": 1779125396,
+    "update_time": 1779125396,
+    "_id": "PERSON<SEP>Page 101 (page_number)"
+  },
+  "John Doe<SEP>Training Program Requirements List (list)": {
+    "chunk_ids": [
+      "chunk-1a79d4419589ab1475876d5797c6d507"
+    ],
+    "count": 1,
+    "create_time": 1779125398,
+    "update_time": 1779125398,
+    "_id": "John Doe<SEP>Training Program Requirements List (list)"
+  },
+  "Academic Misconduct and Disciplinary Actions (list)<SEP>XYZ Corporation": {
+    "chunk_ids": [
+      "chunk-1d4510d4d62115dc898228b60f507615"
+    ],
+    "count": 1,
+    "create_time": 1779125398,
+    "update_time": 1779125398,
+    "_id": "Academic Misconduct and Disciplinary Actions (list)<SEP>XYZ Corporation"
+  },
+  "EMPLOYED_IN<SEP>John Doe": {
+    "chunk_ids": [
+      "chunk-8b13ab8467633205566594863cef1e51"
+    ],
+    "count": 1,
+    "create_time": 1779125398,
+    "update_time": 1779125398,
+    "_id": "EMPLOYED_IN<SEP>John Doe"
+  },
+  "ORGANIZATION<SEP>Page 101 (page_number)": {
+    "chunk_ids": [
+      "chunk-8b13ab8467633205566594863cef1e51"
+    ],
+    "count": 1,
+    "create_time": 1779125401,
+    "update_time": 1779125401,
+    "_id": "ORGANIZATION<SEP>Page 101 (page_number)"
+  },
+  "LOCATION<SEP>Page 101 (page_number)": {
+    "chunk_ids": [
+      "chunk-8b13ab8467633205566594863cef1e51"
+    ],
+    "count": 1,
+    "create_time": 1779125403,
+    "update_time": 1779125403,
+    "_id": "LOCATION<SEP>Page 101 (page_number)"
+  },
+  "New York<SEP>Quy định về trách nhiệm và quy trình điều chỉnh quy chế (list)": {
+    "chunk_ids": [
+      "chunk-27b39e295e45ea7abc37185ce1fa0bf4"
+    ],
+    "count": 1,
+    "create_time": 1779125404,
+    "update_time": 1779125404,
+    "_id": "New York<SEP>Quy định về trách nhiệm và quy trình điều chỉnh quy chế (list)"
+  }
+}

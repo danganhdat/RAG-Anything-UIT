@@ -1,0 +1,928 @@
+{
+  "Person": {
+    "chunk_ids": [
+      "chunk-ca586d09eebb201228d9b33ad6b899a0",
+      "chunk-9e2f86f6632b46ff687444de2038e2f7",
+      "chunk-732a71e7ba97c00657dbc1d81ac18b3d",
+      "chunk-baba3350335af09f5911105c7d709b7c",
+      "chunk-f5335acf89efc495bfb402f037ce9c86",
+      "chunk-4ea08f25fe53639be3a32f9d3143ee3c",
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378",
+      "chunk-0ae530aaefa9ec49181f498b7b850b74",
+      "chunk-1b7f0b6645ea14152521c660a6ef69ec",
+      "chunk-613c8deecb882a56a272ab2e074fec54",
+      "chunk-f53fe2eabd63079e7c8da0aabb8606b8",
+      "chunk-71b1bd96efc4c6aa0ba6e5eb06284cf1"
+    ],
+    "count": 12,
+    "create_time": 1779125260,
+    "update_time": 1779125260,
+    "_id": "Person"
+  },
+  "Organization": {
+    "chunk_ids": [
+      "chunk-ca586d09eebb201228d9b33ad6b899a0",
+      "chunk-f45c99de2ad46760001319e672323fe4",
+      "chunk-9db00cb2fd9c4b66de32ae72da465403",
+      "chunk-cab612101eb55eba76edcb21b07cf0de",
+      "chunk-9e2f86f6632b46ff687444de2038e2f7",
+      "chunk-732a71e7ba97c00657dbc1d81ac18b3d",
+      "chunk-baba3350335af09f5911105c7d709b7c",
+      "chunk-ce8774538d11584c40917b36def8ae14",
+      "chunk-f5335acf89efc495bfb402f037ce9c86",
+      "chunk-4ea08f25fe53639be3a32f9d3143ee3c",
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378",
+      "chunk-0ae530aaefa9ec49181f498b7b850b74",
+      "chunk-1b7f0b6645ea14152521c660a6ef69ec",
+      "chunk-613c8deecb882a56a272ab2e074fec54",
+      "chunk-645f89b4a850534d575d984c996f8c34",
+      "chunk-f53fe2eabd63079e7c8da0aabb8606b8",
+      "chunk-3dd67506561a0a88acf8d2801394a317",
+      "chunk-71b1bd96efc4c6aa0ba6e5eb06284cf1"
+    ],
+    "count": 18,
+    "create_time": 1779125260,
+    "update_time": 1779125260,
+    "_id": "Organization"
+  },
+  "Location": {
+    "chunk_ids": [
+      "chunk-ca586d09eebb201228d9b33ad6b899a0",
+      "chunk-f45c99de2ad46760001319e672323fe4",
+      "chunk-9db00cb2fd9c4b66de32ae72da465403",
+      "chunk-cab612101eb55eba76edcb21b07cf0de",
+      "chunk-80d950950899e5ab67f9778303e69ac2",
+      "chunk-9e2f86f6632b46ff687444de2038e2f7",
+      "chunk-732a71e7ba97c00657dbc1d81ac18b3d",
+      "chunk-baba3350335af09f5911105c7d709b7c",
+      "chunk-ce8774538d11584c40917b36def8ae14",
+      "chunk-f5335acf89efc495bfb402f037ce9c86",
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378",
+      "chunk-1b7f0b6645ea14152521c660a6ef69ec",
+      "chunk-645f89b4a850534d575d984c996f8c34",
+      "chunk-f53fe2eabd63079e7c8da0aabb8606b8"
+    ],
+    "count": 14,
+    "create_time": 1779125260,
+    "update_time": 1779125260,
+    "_id": "Location"
+  },
+  "Cupertino": {
+    "chunk_ids": [
+      "chunk-1f0d016021da4722163aae51af78f3e8",
+      "chunk-7337b73ce52272bcfd74967844905f53",
+      "chunk-086751713da2bf5f81e854cf97dce238",
+      "chunk-c065f506220069885e5102bf3efaedaa",
+      "chunk-8ae14722263e9b0509ad70fd8d35e1f6",
+      "chunk-8a1a01c583b5c541987140599e325699",
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378"
+    ],
+    "count": 7,
+    "update_time": 1779125356,
+    "_id": "Cupertino"
+  },
+  "California": {
+    "chunk_ids": [
+      "chunk-1f0d016021da4722163aae51af78f3e8",
+      "chunk-7337b73ce52272bcfd74967844905f53",
+      "chunk-8ae14722263e9b0509ad70fd8d35e1f6",
+      "chunk-8a1a01c583b5c541987140599e325699"
+    ],
+    "count": 4,
+    "create_time": 1779125260,
+    "update_time": 1779125260,
+    "_id": "California"
+  },
+  "John Doe": {
+    "chunk_ids": [
+      "chunk-c9d998031be63b0eb355077b58de6dbd",
+      "chunk-98312a6db6b27a6fa37ae8f3e952ac23",
+      "chunk-c607a2663553b3a7cfc4f1a947191079",
+      "chunk-bcbe2e29548e936cc43ad450cfcbd924",
+      "chunk-0cb12968978092d08c88f8602f8557e6",
+      "chunk-412d7ac757951df584de37382aac8e38",
+      "chunk-daf86420a5975032d6005c7dc2fadd63",
+      "chunk-483748684a0878ed3fd34d5d10fa2788",
+      "chunk-ce24f6fc05c42d467a5cf5fc10a59d92",
+      "chunk-ec493a9692ae952269f0f74c9ffd5a36",
+      "chunk-2562c639bccca05d357c46fd18b7f439",
+      "chunk-1d4510d4d62115dc898228b60f507615",
+      "chunk-1a79d4419589ab1475876d5797c6d507",
+      "chunk-ca586d09eebb201228d9b33ad6b899a0",
+      "chunk-732a71e7ba97c00657dbc1d81ac18b3d",
+      "chunk-f5335acf89efc495bfb402f037ce9c86",
+      "chunk-645f89b4a850534d575d984c996f8c34",
+      "chunk-8b13ab8467633205566594863cef1e51"
+    ],
+    "count": 18,
+    "update_time": 1779125400,
+    "_id": "John Doe"
+  },
+  "European Union": {
+    "chunk_ids": [
+      "chunk-c9d998031be63b0eb355077b58de6dbd",
+      "chunk-b69f950e0c9c83e9c659c42b4ff54dcf",
+      "chunk-9e89bf4d047d3c9a123461d1e4736161",
+      "chunk-c4058c290ae393d15ba5434b9b5b590b"
+    ],
+    "count": 4,
+    "create_time": 1779125260,
+    "update_time": 1779125260,
+    "_id": "European Union"
+  },
+  "Nile River": {
+    "chunk_ids": [
+      "chunk-b69f950e0c9c83e9c659c42b4ff54dcf"
+    ],
+    "count": 1,
+    "create_time": 1779125260,
+    "update_time": 1779125260,
+    "_id": "Nile River"
+  },
+  "World Health Organization": {
+    "chunk_ids": [
+      "chunk-ad06e2578f9bc558c154bafbbd0033fe"
+    ],
+    "count": 1,
+    "create_time": 1779125261,
+    "update_time": 1779125261,
+    "_id": "World Health Organization"
+  },
+  "Covid-19": {
+    "chunk_ids": [
+      "chunk-ad06e2578f9bc558c154bafbbd0033fe"
+    ],
+    "count": 1,
+    "create_time": 1779125261,
+    "update_time": 1779125261,
+    "_id": "Covid-19"
+  },
+  "Acme Corp": {
+    "chunk_ids": [
+      "chunk-98312a6db6b27a6fa37ae8f3e952ac23",
+      "chunk-0cb12968978092d08c88f8602f8557e6",
+      "chunk-daf86420a5975032d6005c7dc2fadd63",
+      "chunk-645f89b4a850534d575d984c996f8c34"
+    ],
+    "count": 4,
+    "update_time": 1779125367,
+    "_id": "Acme Corp"
+  },
+  "TechCorp": {
+    "chunk_ids": [
+      "chunk-c607a2663553b3a7cfc4f1a947191079",
+      "chunk-bcbe2e29548e936cc43ad450cfcbd924",
+      "chunk-483748684a0878ed3fd34d5d10fa2788",
+      "chunk-ce24f6fc05c42d467a5cf5fc10a59d92",
+      "chunk-ca586d09eebb201228d9b33ad6b899a0",
+      "chunk-732a71e7ba97c00657dbc1d81ac18b3d",
+      "chunk-f5335acf89efc495bfb402f037ce9c86"
+    ],
+    "count": 7,
+    "update_time": 1779125285,
+    "_id": "TechCorp"
+  },
+  "Apple Inc.": {
+    "chunk_ids": [
+      "chunk-4bb0f93963a4f4241e45a1d00a923806",
+      "chunk-3ad5534dff46d7e902462d596172ba68",
+      "chunk-cab612101eb55eba76edcb21b07cf0de",
+      "chunk-1f0d016021da4722163aae51af78f3e8",
+      "chunk-c065f506220069885e5102bf3efaedaa",
+      "chunk-8ae14722263e9b0509ad70fd8d35e1f6",
+      "chunk-80d950950899e5ab67f9778303e69ac2",
+      "chunk-7337b73ce52272bcfd74967844905f53",
+      "chunk-0ae530aaefa9ec49181f498b7b850b74",
+      "chunk-086751713da2bf5f81e854cf97dce238",
+      "chunk-71b1bd96efc4c6aa0ba6e5eb06284cf1",
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378",
+      "chunk-f53fe2eabd63079e7c8da0aabb8606b8",
+      "chunk-2562c639bccca05d357c46fd18b7f439",
+      "chunk-3dd67506561a0a88acf8d2801394a317"
+    ],
+    "count": 15,
+    "update_time": 1779125388,
+    "_id": "Apple Inc."
+  },
+  "Steve Jobs": {
+    "chunk_ids": [
+      "chunk-4bb0f93963a4f4241e45a1d00a923806",
+      "chunk-3ad5534dff46d7e902462d596172ba68",
+      "chunk-3dd67506561a0a88acf8d2801394a317"
+    ],
+    "count": 3,
+    "update_time": 1779125390,
+    "_id": "Steve Jobs"
+  },
+  "New York": {
+    "chunk_ids": [
+      "chunk-e5e558ecf5cf98f03186f42aabff5e91",
+      "chunk-daf86420a5975032d6005c7dc2fadd63",
+      "chunk-3ad5534dff46d7e902462d596172ba68",
+      "chunk-27b39e295e45ea7abc37185ce1fa0bf4"
+    ],
+    "count": 4,
+    "create_time": 1779125261,
+    "update_time": 1779125261,
+    "_id": "New York"
+  },
+  "Eiffel Tower": {
+    "chunk_ids": [
+      "chunk-e5e558ecf5cf98f03186f42aabff5e91",
+      "chunk-1a79d4419589ab1475876d5797c6d507"
+    ],
+    "count": 2,
+    "create_time": 1779125261,
+    "update_time": 1779125261,
+    "_id": "Eiffel Tower"
+  },
+  "Project X": {
+    "chunk_ids": [
+      "chunk-b6853beacdecc989a2ee0f408ede1fe8",
+      "chunk-ec493a9692ae952269f0f74c9ffd5a36"
+    ],
+    "count": 2,
+    "create_time": 1779125261,
+    "update_time": 1779125261,
+    "_id": "Project X"
+  },
+  "TechNova": {
+    "chunk_ids": [
+      "chunk-b6853beacdecc989a2ee0f408ede1fe8"
+    ],
+    "count": 1,
+    "create_time": 1779125262,
+    "update_time": 1779125262,
+    "_id": "TechNova"
+  },
+  "organization": {
+    "chunk_ids": [
+      "chunk-f0c724e3955b9ca2168e6046a0983356"
+    ],
+    "count": 1,
+    "create_time": 1779125262,
+    "update_time": 1779125262,
+    "_id": "organization"
+  },
+  "location": {
+    "chunk_ids": [
+      "chunk-f0c724e3955b9ca2168e6046a0983356",
+      "chunk-80d950950899e5ab67f9778303e69ac2"
+    ],
+    "count": 2,
+    "update_time": 1779125290,
+    "_id": "location"
+  },
+  "Artificial Intelligence": {
+    "chunk_ids": [
+      "chunk-9e89bf4d047d3c9a123461d1e4736161",
+      "chunk-c4058c290ae393d15ba5434b9b5b590b"
+    ],
+    "count": 2,
+    "create_time": 1779125262,
+    "update_time": 1779125262,
+    "_id": "Artificial Intelligence"
+  },
+  "Tech Corp": {
+    "chunk_ids": [
+      "chunk-f8730e0a4d15968cfa315fa0aa874df0"
+    ],
+    "count": 1,
+    "create_time": 1779125262,
+    "update_time": 1779125262,
+    "_id": "Tech Corp"
+  },
+  "Silicon Valley": {
+    "chunk_ids": [
+      "chunk-f8730e0a4d15968cfa315fa0aa874df0",
+      "chunk-483748684a0878ed3fd34d5d10fa2788"
+    ],
+    "count": 2,
+    "create_time": 1779125262,
+    "update_time": 1779125262,
+    "_id": "Silicon Valley"
+  },
+  "Amazon": {
+    "chunk_ids": [
+      "chunk-95c1169243018f0c8dffbcc79efad744"
+    ],
+    "count": 1,
+    "create_time": 1779125263,
+    "update_time": 1779125263,
+    "_id": "Amazon"
+  },
+  "Seattle": {
+    "chunk_ids": [
+      "chunk-95c1169243018f0c8dffbcc79efad744"
+    ],
+    "count": 1,
+    "create_time": 1779125263,
+    "update_time": 1779125263,
+    "_id": "Seattle"
+  },
+  "Jeff Bezos": {
+    "chunk_ids": [
+      "chunk-95c1169243018f0c8dffbcc79efad744"
+    ],
+    "count": 1,
+    "create_time": 1779125263,
+    "update_time": 1779125263,
+    "_id": "Jeff Bezos"
+  },
+  "Blue Origin": {
+    "chunk_ids": [
+      "chunk-95c1169243018f0c8dffbcc79efad744"
+    ],
+    "count": 1,
+    "create_time": 1779125263,
+    "update_time": 1779125263,
+    "_id": "Blue Origin"
+  },
+  "1976": {
+    "chunk_ids": [
+      "chunk-086751713da2bf5f81e854cf97dce238"
+    ],
+    "count": 1,
+    "create_time": 1779125263,
+    "update_time": 1779125263,
+    "_id": "1976"
+  },
+  "Product": {
+    "chunk_ids": [
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378"
+    ],
+    "count": 1,
+    "create_time": 1779125263,
+    "update_time": 1779125263,
+    "_id": "Product"
+  },
+  "Company A": {
+    "chunk_ids": [
+      "chunk-ec493a9692ae952269f0f74c9ffd5a36"
+    ],
+    "count": 1,
+    "create_time": 1779125264,
+    "update_time": 1779125264,
+    "_id": "Company A"
+  },
+  "Élise Dubois": {
+    "chunk_ids": [
+      "chunk-2562c639bccca05d357c46fd18b7f439"
+    ],
+    "count": 1,
+    "create_time": 1779125264,
+    "update_time": 1779125264,
+    "_id": "Élise Dubois"
+  },
+  "XYZ Corporation": {
+    "chunk_ids": [
+      "chunk-1d4510d4d62115dc898228b60f507615"
+    ],
+    "count": 1,
+    "create_time": 1779125265,
+    "update_time": 1779125265,
+    "_id": "XYZ Corporation"
+  },
+  "École Polytechnique Fédérale de Lausanne": {
+    "chunk_ids": [
+      "chunk-9ab39b15f5d23acf8f9928924d1ca748"
+    ],
+    "count": 1,
+    "create_time": 1779125265,
+    "update_time": 1779125265,
+    "_id": "École Polytechnique Fédérale de Lausanne"
+  },
+  "José Mourinho": {
+    "chunk_ids": [
+      "chunk-9ab39b15f5d23acf8f9928924d1ca748"
+    ],
+    "count": 1,
+    "create_time": 1779125266,
+    "update_time": 1779125266,
+    "_id": "José Mourinho"
+  },
+  "United Nations": {
+    "chunk_ids": [
+      "chunk-27b39e295e45ea7abc37185ce1fa0bf4"
+    ],
+    "count": 1,
+    "create_time": 1779125266,
+    "update_time": 1779125266,
+    "_id": "United Nations"
+  },
+  "PERSON": {
+    "chunk_ids": [
+      "chunk-8b13ab8467633205566594863cef1e51"
+    ],
+    "count": 1,
+    "create_time": 1779125266,
+    "update_time": 1779125266,
+    "_id": "PERSON"
+  },
+  "ORGANIZATION": {
+    "chunk_ids": [
+      "chunk-8b13ab8467633205566594863cef1e51"
+    ],
+    "count": 1,
+    "create_time": 1779125266,
+    "update_time": 1779125266,
+    "_id": "ORGANIZATION"
+  },
+  "LOCATION": {
+    "chunk_ids": [
+      "chunk-8b13ab8467633205566594863cef1e51"
+    ],
+    "count": 1,
+    "create_time": 1779125266,
+    "update_time": 1779125266,
+    "_id": "LOCATION"
+  },
+  "Employed By": {
+    "chunk_ids": [
+      "chunk-ca586d09eebb201228d9b33ad6b899a0",
+      "chunk-1d4510d4d62115dc898228b60f507615"
+    ],
+    "count": 2,
+    "create_time": 1779125281,
+    "update_time": 1779125281,
+    "_id": "Employed By"
+  },
+  "Located In": {
+    "chunk_ids": [
+      "chunk-ca586d09eebb201228d9b33ad6b899a0",
+      "chunk-483748684a0878ed3fd34d5d10fa2788",
+      "chunk-645f89b4a850534d575d984c996f8c34",
+      "chunk-1d4510d4d62115dc898228b60f507615"
+    ],
+    "count": 4,
+    "update_time": 1779125392,
+    "_id": "Located In"
+  },
+  "Albert Einstein": {
+    "chunk_ids": [
+      "chunk-f45c99de2ad46760001319e672323fe4"
+    ],
+    "count": 1,
+    "create_time": 1779125281,
+    "update_time": 1779125281,
+    "_id": "Albert Einstein"
+  },
+  "born in": {
+    "chunk_ids": [
+      "chunk-f45c99de2ad46760001319e672323fe4"
+    ],
+    "count": 1,
+    "create_time": 1779125281,
+    "update_time": 1779125281,
+    "_id": "born in"
+  },
+  "Google": {
+    "chunk_ids": [
+      "chunk-9db00cb2fd9c4b66de32ae72da465403"
+    ],
+    "count": 1,
+    "create_time": 1779125282,
+    "update_time": 1779125282,
+    "_id": "Google"
+  },
+  "works_for": {
+    "chunk_ids": [
+      "chunk-9db00cb2fd9c4b66de32ae72da465403",
+      "chunk-732a71e7ba97c00657dbc1d81ac18b3d",
+      "chunk-98312a6db6b27a6fa37ae8f3e952ac23"
+    ],
+    "count": 3,
+    "update_time": 1779125285,
+    "_id": "works_for"
+  },
+  "headquartered in": {
+    "chunk_ids": [
+      "chunk-cab612101eb55eba76edcb21b07cf0de"
+    ],
+    "count": 1,
+    "create_time": 1779125284,
+    "update_time": 1779125284,
+    "_id": "headquartered in"
+  },
+  "headquartered_in": {
+    "chunk_ids": [
+      "chunk-9db00cb2fd9c4b66de32ae72da465403",
+      "chunk-c4058c290ae393d15ba5434b9b5b590b",
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378"
+    ],
+    "count": 3,
+    "update_time": 1779125343,
+    "_id": "headquartered_in"
+  },
+  "Founded": {
+    "chunk_ids": [
+      "chunk-9e2f86f6632b46ff687444de2038e2f7",
+      "chunk-66b5b5c77e9ff1a454897bdddf6c029e",
+      "chunk-645f89b4a850534d575d984c996f8c34",
+      "chunk-ce24f6fc05c42d467a5cf5fc10a59d92",
+      "chunk-71b1bd96efc4c6aa0ba6e5eb06284cf1"
+    ],
+    "count": 5,
+    "update_time": 1779125392,
+    "_id": "Founded"
+  },
+  "located in": {
+    "chunk_ids": [
+      "chunk-1f0d016021da4722163aae51af78f3e8",
+      "chunk-c065f506220069885e5102bf3efaedaa",
+      "chunk-8ae14722263e9b0509ad70fd8d35e1f6",
+      "chunk-0cb12968978092d08c88f8602f8557e6",
+      "chunk-27b39e295e45ea7abc37185ce1fa0bf4"
+    ],
+    "count": 5,
+    "update_time": 1779125394,
+    "_id": "located in"
+  },
+  "GlobalTech Inc.": {
+    "chunk_ids": [
+      "chunk-9e2f86f6632b46ff687444de2038e2f7"
+    ],
+    "count": 1,
+    "create_time": 1779125285,
+    "update_time": 1779125285,
+    "_id": "GlobalTech Inc."
+  },
+  "located_in": {
+    "chunk_ids": [
+      "chunk-732a71e7ba97c00657dbc1d81ac18b3d",
+      "chunk-f5335acf89efc495bfb402f037ce9c86",
+      "chunk-c9d998031be63b0eb355077b58de6dbd",
+      "chunk-98312a6db6b27a6fa37ae8f3e952ac23",
+      "chunk-f0c724e3955b9ca2168e6046a0983356",
+      "chunk-f8730e0a4d15968cfa315fa0aa874df0",
+      "chunk-412d7ac757951df584de37382aac8e38",
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378",
+      "chunk-f53fe2eabd63079e7c8da0aabb8606b8",
+      "chunk-2562c639bccca05d357c46fd18b7f439",
+      "chunk-3ad5534dff46d7e902462d596172ba68"
+    ],
+    "count": 11,
+    "update_time": 1779125388,
+    "_id": "located_in"
+  },
+  "founded_by": {
+    "chunk_ids": [
+      "chunk-80d950950899e5ab67f9778303e69ac2",
+      "chunk-c9d998031be63b0eb355077b58de6dbd",
+      "chunk-f0c724e3955b9ca2168e6046a0983356",
+      "chunk-613c8deecb882a56a272ab2e074fec54"
+    ],
+    "count": 4,
+    "update_time": 1779125366,
+    "_id": "founded_by"
+  },
+  "Length": {
+    "chunk_ids": [
+      "chunk-b69f950e0c9c83e9c659c42b4ff54dcf"
+    ],
+    "count": 1,
+    "create_time": 1779125289,
+    "update_time": 1779125289,
+    "_id": "Length"
+  },
+  "Headquarters": {
+    "chunk_ids": [
+      "chunk-b69f950e0c9c83e9c659c42b4ff54dcf",
+      "chunk-086751713da2bf5f81e854cf97dce238",
+      "chunk-71b1bd96efc4c6aa0ba6e5eb06284cf1"
+    ],
+    "count": 3,
+    "update_time": 1779125308,
+    "_id": "Headquarters"
+  },
+  "employs": {
+    "chunk_ids": [
+      "chunk-c607a2663553b3a7cfc4f1a947191079",
+      "chunk-f8730e0a4d15968cfa315fa0aa874df0",
+      "chunk-ec493a9692ae952269f0f74c9ffd5a36"
+    ],
+    "count": 3,
+    "update_time": 1779125389,
+    "_id": "employs"
+  },
+  "CEO of": {
+    "chunk_ids": [
+      "chunk-4bb0f93963a4f4241e45a1d00a923806"
+    ],
+    "count": 1,
+    "create_time": 1779125302,
+    "update_time": 1779125302,
+    "_id": "CEO of"
+  },
+  "resides_in": {
+    "chunk_ids": [
+      "chunk-c607a2663553b3a7cfc4f1a947191079"
+    ],
+    "count": 1,
+    "create_time": 1779125302,
+    "update_time": 1779125302,
+    "_id": "resides_in"
+  },
+  "founded by": {
+    "chunk_ids": [
+      "chunk-4bb0f93963a4f4241e45a1d00a923806",
+      "chunk-0ae530aaefa9ec49181f498b7b850b74"
+    ],
+    "count": 2,
+    "create_time": 1779125302,
+    "update_time": 1779125302,
+    "_id": "founded by"
+  },
+  "employed by": {
+    "chunk_ids": [
+      "chunk-0cb12968978092d08c88f8602f8557e6"
+    ],
+    "count": 1,
+    "create_time": 1779125305,
+    "update_time": 1779125305,
+    "_id": "employed by"
+  },
+  "Elon Musk": {
+    "chunk_ids": [
+      "chunk-66b5b5c77e9ff1a454897bdddf6c029e"
+    ],
+    "count": 1,
+    "create_time": 1779125305,
+    "update_time": 1779125305,
+    "_id": "Elon Musk"
+  },
+  "Siemens": {
+    "chunk_ids": [
+      "chunk-f0c724e3955b9ca2168e6046a0983356"
+    ],
+    "count": 1,
+    "create_time": 1779125305,
+    "update_time": 1779125305,
+    "_id": "Siemens"
+  },
+  "Gerd Homann": {
+    "chunk_ids": [
+      "chunk-f0c724e3955b9ca2168e6046a0983356"
+    ],
+    "count": 1,
+    "create_time": 1779125305,
+    "update_time": 1779125305,
+    "_id": "Gerd Homann"
+  },
+  "John McCarthy": {
+    "chunk_ids": [
+      "chunk-9e89bf4d047d3c9a123461d1e4736161"
+    ],
+    "count": 1,
+    "create_time": 1779125306,
+    "update_time": 1779125306,
+    "_id": "John McCarthy"
+  },
+  "Information Technology": {
+    "chunk_ids": [
+      "chunk-9e89bf4d047d3c9a123461d1e4736161"
+    ],
+    "count": 1,
+    "create_time": 1779125306,
+    "update_time": 1779125306,
+    "_id": "Information Technology"
+  },
+  "part_of": {
+    "chunk_ids": [
+      "chunk-9e89bf4d047d3c9a123461d1e4736161"
+    ],
+    "count": 1,
+    "create_time": 1779125306,
+    "update_time": 1779125306,
+    "_id": "part_of"
+  },
+  "developed_by": {
+    "chunk_ids": [
+      "chunk-9e89bf4d047d3c9a123461d1e4736161",
+      "chunk-412d7ac757951df584de37382aac8e38",
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378"
+    ],
+    "count": 3,
+    "update_time": 1779125346,
+    "_id": "developed_by"
+  },
+  "Trường Đại học Công nghệ Thông tin (header)": {
+    "chunk_ids": [
+      "chunk-3b3aa97ecff791451aecf017e81fb0de",
+      "chunk-95c1169243018f0c8dffbcc79efad744"
+    ],
+    "count": 2,
+    "create_time": 1779125307,
+    "update_time": 1779125307,
+    "_id": "Trường Đại học Công nghệ Thông tin (header)"
+  },
+  "developed": {
+    "chunk_ids": [
+      "chunk-f5335acf89efc495bfb402f037ce9c86",
+      "chunk-ec493a9692ae952269f0f74c9ffd5a36"
+    ],
+    "count": 2,
+    "create_time": 1779125309,
+    "update_time": 1779125309,
+    "_id": "developed"
+  },
+  "Neural Network": {
+    "chunk_ids": [
+      "chunk-412d7ac757951df584de37382aac8e38"
+    ],
+    "count": 1,
+    "create_time": 1779125309,
+    "update_time": 1779125309,
+    "_id": "Neural Network"
+  },
+  "Google DeepMind": {
+    "chunk_ids": [
+      "chunk-c4058c290ae393d15ba5434b9b5b590b"
+    ],
+    "count": 1,
+    "create_time": 1779125309,
+    "update_time": 1779125309,
+    "_id": "Google DeepMind"
+  },
+  "Bảng Kê Thanh Toán Hỗ Trợ Bài Báo Nghiên Cứu Khoa Học (table)": {
+    "chunk_ids": [
+      "chunk-4d5e732e82984de8a1ef8a27e82083e0",
+      "chunk-4ea08f25fe53639be3a32f9d3143ee3c"
+    ],
+    "count": 2,
+    "create_time": 1779125310,
+    "update_time": 1779125310,
+    "_id": "Bảng Kê Thanh Toán Hỗ Trợ Bài Báo Nghiên Cứu Khoa Học (table)"
+  },
+  "CEO_of": {
+    "chunk_ids": [
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378",
+      "chunk-1b7f0b6645ea14152521c660a6ef69ec"
+    ],
+    "count": 2,
+    "update_time": 1779125364,
+    "_id": "CEO_of"
+  },
+  "subsidiary_of": {
+    "chunk_ids": [
+      "chunk-c4058c290ae393d15ba5434b9b5b590b"
+    ],
+    "count": 1,
+    "create_time": 1779125343,
+    "update_time": 1779125343,
+    "_id": "subsidiary_of"
+  },
+  "iPhone": {
+    "chunk_ids": [
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378"
+    ],
+    "count": 1,
+    "create_time": 1779125346,
+    "update_time": 1779125346,
+    "_id": "iPhone"
+  },
+  "Tim Cook": {
+    "chunk_ids": [
+      "chunk-6cb6a1e5886bcb0862f7c7701a447378"
+    ],
+    "count": 1,
+    "create_time": 1779125346,
+    "update_time": 1779125346,
+    "_id": "Tim Cook"
+  },
+  "Employed": {
+    "chunk_ids": [
+      "chunk-483748684a0878ed3fd34d5d10fa2788"
+    ],
+    "count": 1,
+    "create_time": 1779125351,
+    "update_time": 1779125351,
+    "_id": "Employed"
+  },
+  "headquarters location": {
+    "chunk_ids": [
+      "chunk-0ae530aaefa9ec49181f498b7b850b74"
+    ],
+    "count": 1,
+    "create_time": 1779125354,
+    "update_time": 1779125354,
+    "_id": "headquarters location"
+  },
+  "12345": {
+    "chunk_ids": [
+      "chunk-1b7f0b6645ea14152521c660a6ef69ec"
+    ],
+    "count": 1,
+    "create_time": 1779125356,
+    "update_time": 1779125356,
+    "_id": "12345"
+  },
+  "67890": {
+    "chunk_ids": [
+      "chunk-1b7f0b6645ea14152521c660a6ef69ec"
+    ],
+    "count": 1,
+    "create_time": 1779125360,
+    "update_time": 1779125360,
+    "_id": "67890"
+  },
+  "Located_in": {
+    "chunk_ids": [
+      "chunk-1b7f0b6645ea14152521c660a6ef69ec"
+    ],
+    "count": 1,
+    "create_time": 1779125361,
+    "update_time": 1779125361,
+    "_id": "Located_in"
+  },
+  "Greta Thunberg": {
+    "chunk_ids": [
+      "chunk-613c8deecb882a56a272ab2e074fec54"
+    ],
+    "count": 1,
+    "create_time": 1779125364,
+    "update_time": 1779125364,
+    "_id": "Greta Thunberg"
+  },
+  "Greenpeace International": {
+    "chunk_ids": [
+      "chunk-613c8deecb882a56a272ab2e074fec54"
+    ],
+    "count": 1,
+    "create_time": 1779125365,
+    "update_time": 1779125365,
+    "_id": "Greenpeace International"
+  },
+  "activist_for": {
+    "chunk_ids": [
+      "chunk-613c8deecb882a56a272ab2e074fec54"
+    ],
+    "count": 1,
+    "create_time": 1779125367,
+    "update_time": 1779125367,
+    "_id": "activist_for"
+  },
+  "LocatedIn": {
+    "chunk_ids": [
+      "chunk-390d36b439394e20a231223219ef0a97",
+      "chunk-ce24f6fc05c42d467a5cf5fc10a59d92"
+    ],
+    "count": 2,
+    "update_time": 1779125386,
+    "_id": "LocatedIn"
+  },
+  "XYZ Corp": {
+    "chunk_ids": [
+      "chunk-390d36b439394e20a231223219ef0a97"
+    ],
+    "count": 1,
+    "create_time": 1779125369,
+    "update_time": 1779125369,
+    "_id": "XYZ Corp"
+  },
+  "founded": {
+    "chunk_ids": [
+      "chunk-f53fe2eabd63079e7c8da0aabb8606b8",
+      "chunk-3ad5534dff46d7e902462d596172ba68"
+    ],
+    "count": 2,
+    "update_time": 1779125384,
+    "_id": "founded"
+  },
+  "employed_by": {
+    "chunk_ids": [
+      "chunk-2562c639bccca05d357c46fd18b7f439"
+    ],
+    "count": 1,
+    "create_time": 1779125392,
+    "update_time": 1779125392,
+    "_id": "employed_by"
+  },
+  "1945": {
+    "chunk_ids": [
+      "chunk-27b39e295e45ea7abc37185ce1fa0bf4"
+    ],
+    "count": 1,
+    "create_time": 1779125394,
+    "update_time": 1779125394,
+    "_id": "1945"
+  },
+  "founded in": {
+    "chunk_ids": [
+      "chunk-27b39e295e45ea7abc37185ce1fa0bf4"
+    ],
+    "count": 1,
+    "create_time": 1779125395,
+    "update_time": 1779125395,
+    "_id": "founded in"
+  },
+  "EMPLOYED_IN": {
+    "chunk_ids": [
+      "chunk-8b13ab8467633205566594863cef1e51"
+    ],
+    "count": 1,
+    "create_time": 1779125398,
+    "update_time": 1779125398,
+    "_id": "EMPLOYED_IN"
+  }
+}

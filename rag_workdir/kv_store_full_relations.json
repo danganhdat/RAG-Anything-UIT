@@ -1,0 +1,742 @@
+{
+  "doc-1e426b10b4427b38bab54e7da71a7a78": {
+    "relation_pairs": [
+      [
+        "Eiffel Tower",
+        "Training Program Requirements List (list)"
+      ],
+      [
+        "Location",
+        "Thesis Submission and Graduation Documentation Requirements (list)"
+      ],
+      [
+        "Location",
+        "Page 25 of Master's Curriculum (page_number)"
+      ],
+      [
+        "Person",
+        "Unnamed_Table (table)"
+      ],
+      [
+        "Page 97 (page_number)",
+        "École Polytechnique Fédérale de Lausanne"
+      ],
+      [
+        "Organization",
+        "Unnamed_Table (table)"
+      ],
+      [
+        "PERSON",
+        "Page 101 (page_number)"
+      ],
+      [
+        "Employed",
+        "John Doe"
+      ],
+      [
+        "Location",
+        "Độc lập - Tự do - Hạnh phúc (header)"
+      ],
+      [
+        "California",
+        "Master's Program Curriculum in Information Security - Page 33 (table)"
+      ],
+      [
+        "Bảng Tổng Hợp Thống Kê Bài Báo Khoa Học Đề Xuất Nhận Hỗ Trợ Nghiên Cứu (table)",
+        "Cupertino"
+      ],
+      [
+        "Credit Allocation for Research Special Topics and Elective Courses (page_footnote)",
+        "John Doe"
+      ],
+      [
+        "Học viên (header)",
+        "John Doe"
+      ],
+      [
+        "Học viên (header)",
+        "TechCorp"
+      ],
+      [
+        "John Doe",
+        "works_for"
+      ],
+      [
+        "LocatedIn",
+        "XYZ Corp"
+      ],
+      [
+        "California",
+        "Thesis Evaluation Committee Guidelines (list)"
+      ],
+      [
+        "CEO_of",
+        "Tim Cook"
+      ],
+      [
+        "Located In",
+        "XYZ Corporation"
+      ],
+      [
+        "Academic Encouragement Scholarship for PhD Candidates (Type 2) (table)",
+        "Product"
+      ],
+      [
+        "John Doe",
+        "Training Program Requirements List (list)"
+      ],
+      [
+        "Conditions for Academic Study Extension (list)",
+        "Cupertino"
+      ],
+      [
+        "Google",
+        "works_for"
+      ],
+      [
+        "Academic Misconduct and Disciplinary Actions (list)",
+        "John Doe"
+      ],
+      [
+        "Apple Inc.",
+        "location"
+      ],
+      [
+        "Apple Inc.",
+        "Founded"
+      ],
+      [
+        "New York",
+        "located_in"
+      ],
+      [
+        "Organization",
+        "Thesis Submission and Graduation Documentation Requirements (list)"
+      ],
+      [
+        "John Doe",
+        "Notice No. 39 on Thesis Protection Extension (header)"
+      ],
+      [
+        "ORGANIZATION",
+        "Page 101 (page_number)"
+      ],
+      [
+        "European Union",
+        "founded_by"
+      ],
+      [
+        "Person",
+        "Độc lập - Tự do - Hạnh phúc (header)"
+      ],
+      [
+        "New York",
+        "Thesis Supervisor Qualification Criteria (list)"
+      ],
+      [
+        "Organization",
+        "Độc lập - Tự do - Hạnh phúc (header)"
+      ],
+      [
+        "Academic Misconduct and Disciplinary Actions (list)",
+        "XYZ Corporation"
+      ],
+      [
+        "Date and Location Header (header)",
+        "Organization"
+      ],
+      [
+        "Neural Network",
+        "located_in"
+      ],
+      [
+        "Acme Corp",
+        "located_in"
+      ],
+      [
+        "Apple Inc.",
+        "Headquarters"
+      ],
+      [
+        "Cross-Program Course Credit Table for Information Systems Master's (table)",
+        "John Doe"
+      ],
+      [
+        "Master's Training Program Structure and Credit Requirements (list)",
+        "Organization"
+      ],
+      [
+        "Location",
+        "Master's Training Program Structure and Credit Requirements (list)"
+      ],
+      [
+        "Location",
+        "Page 42 - Academic Regulations and Course Substitution Guidelines (page_number)"
+      ],
+      [
+        "Greenpeace International",
+        "founded_by"
+      ],
+      [
+        "Cupertino",
+        "located in"
+      ],
+      [
+        "European Union",
+        "ĐẠI HỌC QUỐC GIA (header)"
+      ],
+      [
+        "Bảng Kê Thanh Toán Hỗ Trợ Bài Báo Nghiên Cứu Khoa Học (table)",
+        "Person"
+      ],
+      [
+        "Apple Inc.",
+        "founded_by"
+      ],
+      [
+        "Blue Origin",
+        "Trường Đại học Công nghệ Thông tin (header)"
+      ],
+      [
+        "Location",
+        "Thesis Extension Policy Details (list)"
+      ],
+      [
+        "Apple Inc.",
+        "headquartered in"
+      ],
+      [
+        "Apple Inc.",
+        "Cupertino"
+      ],
+      [
+        "Apple Inc.",
+        "founded by"
+      ],
+      [
+        "European Union",
+        "headquartered_in"
+      ],
+      [
+        "Google",
+        "headquartered_in"
+      ],
+      [
+        "Học viên (header)",
+        "Silicon Valley"
+      ],
+      [
+        "Acme Corp",
+        "Located In"
+      ],
+      [
+        "Founded",
+        "GlobalTech Inc."
+      ],
+      [
+        "Company A",
+        "employs"
+      ],
+      [
+        "Academic Encouragement Scholarship for PhD Candidates (Type 2) (table)",
+        "Person"
+      ],
+      [
+        "John Doe",
+        "Types of Master's Programs at University of Information Technology (list)"
+      ],
+      [
+        "Equivalent Subjects Mapping Table (table)",
+        "TechNova"
+      ],
+      [
+        "CVHT Responsibilities and Reporting Requirements (list)",
+        "Location"
+      ],
+      [
+        "Location",
+        "Page 14 (page_number)"
+      ],
+      [
+        "Seattle",
+        "Trường Đại học Công nghệ Thông tin (header)"
+      ],
+      [
+        "CVHT Responsibilities and Reporting Requirements (list)",
+        "Organization"
+      ],
+      [
+        "Credit Allocation for Research and Elective Courses (page_footnote)",
+        "Steve Jobs"
+      ],
+      [
+        "Person",
+        "Thesis Evaluation Criteria (list)"
+      ],
+      [
+        "Apple Inc.",
+        "headquartered_in"
+      ],
+      [
+        "Organization",
+        "Thesis Evaluation Criteria (list)"
+      ],
+      [
+        "Cupertino",
+        "University Ideological Motto (header)"
+      ],
+      [
+        "Organization",
+        "Page 42 - Academic Regulations and Course Substitution Guidelines (page_number)"
+      ],
+      [
+        "Bảng tổng hợp thống kê số bài báo khoa học đề xuất nhận hỗ trợ nghiên cứu (table)",
+        "Cupertino"
+      ],
+      [
+        "European Union",
+        "Regulation on Scientific Publication Support for Students and Researchers (list)"
+      ],
+      [
+        "Albert Einstein",
+        "born in"
+      ],
+      [
+        "John Doe",
+        "resides_in"
+      ],
+      [
+        "John Doe",
+        "developed"
+      ],
+      [
+        "Organization",
+        "Thesis Extension Policy Details (list)"
+      ],
+      [
+        "Person",
+        "Điều kiện Đăng ký Chương trình Song ngành (list)"
+      ],
+      [
+        "Organization",
+        "Điều kiện Đăng ký Chương trình Song ngành (list)"
+      ],
+      [
+        "Course Evaluation Criteria for Master's Program (list)",
+        "Organization"
+      ],
+      [
+        "Quy định về trách nhiệm và quy trình điều chỉnh quy chế (list)",
+        "United Nations"
+      ],
+      [
+        "Credit Allocation for Research Special Topics and Elective Courses (page_footnote)",
+        "TechCorp"
+      ],
+      [
+        "European Union",
+        "Headquarters"
+      ],
+      [
+        "TP.HCM (header)",
+        "Tech Corp"
+      ],
+      [
+        "Academic Encouragement Scholarship for PhD Candidates (Type 2) (table)",
+        "Organization"
+      ],
+      [
+        "Eiffel Tower",
+        "empty_table (table)"
+      ],
+      [
+        "Covid-19",
+        "Empty Table Placeholder (table)"
+      ],
+      [
+        "Apple Inc.",
+        "located in"
+      ],
+      [
+        "Bảng Tổng Hợp Thống Kê Bài Báo Khoa Học Đề Xuất Nhận Hỗ Trợ Nghiên Cứu (table)",
+        "California"
+      ],
+      [
+        "Person",
+        "University of Information Technology (header)"
+      ],
+      [
+        "Organization",
+        "University of Information Technology (header)"
+      ],
+      [
+        "Organization",
+        "Page 14 (page_number)"
+      ],
+      [
+        "Artificial Intelligence",
+        "ĐẠI HỌC QUỐC GIA (header)"
+      ],
+      [
+        "José Mourinho",
+        "Page 97 (page_number)"
+      ],
+      [
+        "1945",
+        "founded in"
+      ],
+      [
+        "TechCorp",
+        "located_in"
+      ],
+      [
+        "TechCorp",
+        "Thesis Topic and Advisor Adjustment Procedures (list)"
+      ],
+      [
+        "Page 94 (page_number)",
+        "Élise Dubois"
+      ],
+      [
+        "Cross-Program Course Credit Table for Information Systems Master's (table)",
+        "European Union"
+      ],
+      [
+        "Page 42 - Academic Regulations and Course Substitution Guidelines (page_number)",
+        "Person"
+      ],
+      [
+        "Siemens",
+        "located_in"
+      ],
+      [
+        "Amazon",
+        "Jeff Bezos"
+      ],
+      [
+        "Company A",
+        "Thesis Defense and Evaluation Procedures (page_number)"
+      ],
+      [
+        "Acme Corp",
+        "Notice No. 39 on Thesis Protection Extension (header)"
+      ],
+      [
+        "developed_by",
+        "iPhone"
+      ],
+      [
+        "LocatedIn",
+        "TechCorp"
+      ],
+      [
+        "European Union",
+        "Page 32 - Credit Allocation Framework (page_number)"
+      ],
+      [
+        "Nile River",
+        "Page 32 - Credit Allocation Framework (page_number)"
+      ],
+      [
+        "California",
+        "Conditions for Academic Study Extension (list)"
+      ],
+      [
+        "Jeff Bezos",
+        "Trường Đại học Công nghệ Thông tin (header)"
+      ],
+      [
+        "Apple Inc.",
+        "headquarters location"
+      ],
+      [
+        "Project X",
+        "Thesis Defense and Evaluation Procedures (page_number)"
+      ],
+      [
+        "67890",
+        "Located_in"
+      ],
+      [
+        "New York",
+        "empty_table (table)"
+      ],
+      [
+        "Artificial Intelligence",
+        "Regulation on Scientific Publication Support for Students and Researchers (list)"
+      ],
+      [
+        "Bảng Kê Thanh Toán Hỗ Trợ Bài Báo Nghiên Cứu Khoa Học (table)",
+        "Organization"
+      ],
+      [
+        "Founded",
+        "John Doe"
+      ],
+      [
+        "1976",
+        "University Ideological Motto (header)"
+      ],
+      [
+        "Danh mục các môn học chương trình Thạc sĩ Kỹ thuật Máy tính (table)",
+        "John Doe"
+      ],
+      [
+        "Danh mục các môn học chương trình Thạc sĩ Kỹ thuật Máy tính (table)",
+        "TechCorp"
+      ],
+      [
+        "Steve Jobs",
+        "founded"
+      ],
+      [
+        "New York",
+        "Types of Master's Programs at University of Information Technology (list)"
+      ],
+      [
+        "John Doe",
+        "Page 94 (page_number)"
+      ],
+      [
+        "Apple Inc.",
+        "California"
+      ],
+      [
+        "John Doe",
+        "Thesis Defense and Evaluation Procedures (page_number)"
+      ],
+      [
+        "New York",
+        "located in"
+      ],
+      [
+        "Academic Encouragement Scholarship for PhD Candidates (Type 2) (table)",
+        "Location"
+      ],
+      [
+        "John Doe",
+        "employs"
+      ],
+      [
+        "CEO of",
+        "Steve Jobs"
+      ],
+      [
+        "Acme Corp",
+        "Types of Master's Programs at University of Information Technology (list)"
+      ],
+      [
+        "New York",
+        "Quy định về trách nhiệm và quy trình điều chỉnh quy chế (list)"
+      ],
+      [
+        "Cupertino",
+        "located_in"
+      ],
+      [
+        "Greta Thunberg",
+        "activist_for"
+      ],
+      [
+        "Acme Corp",
+        "located in"
+      ],
+      [
+        "John Doe",
+        "employed_by"
+      ],
+      [
+        "Cupertino",
+        "Master's Program Curriculum in Information Security - Page 33 (table)"
+      ],
+      [
+        "Page 9 - Course Registration Guidelines (page_number)",
+        "Person"
+      ],
+      [
+        "John Doe",
+        "Page 37 (page_number)"
+      ],
+      [
+        "Location",
+        "Page 9 - Course Registration Guidelines (page_number)"
+      ],
+      [
+        "Elon Musk",
+        "Founded"
+      ],
+      [
+        "John Doe",
+        "developed_by"
+      ],
+      [
+        "Apple Inc.",
+        "Credit Allocation for Research and Elective Courses (page_footnote)"
+      ],
+      [
+        "Cupertino",
+        "Thesis Evaluation Committee Guidelines (list)"
+      ],
+      [
+        "Employed By",
+        "John Doe"
+      ],
+      [
+        "Apple Inc.",
+        "founded"
+      ],
+      [
+        "John Doe",
+        "located_in"
+      ],
+      [
+        "John Doe",
+        "Thesis Topic and Advisor Adjustment Procedures (list)"
+      ],
+      [
+        "Location",
+        "Page 11: Thesis Defense Conditions (page_number)"
+      ],
+      [
+        "Amazon",
+        "Seattle"
+      ],
+      [
+        "Date and Location Header (header)",
+        "Person"
+      ],
+      [
+        "12345",
+        "CEO_of"
+      ],
+      [
+        "Location",
+        "Master's Program Curriculum Framework Table (table)"
+      ],
+      [
+        "Master's Program Curriculum Framework Table (table)",
+        "Person"
+      ],
+      [
+        "Tech Corp",
+        "employs"
+      ],
+      [
+        "Blue Origin",
+        "Jeff Bezos"
+      ],
+      [
+        "John McCarthy",
+        "developed_by"
+      ],
+      [
+        "CVHT Evaluation Criteria and Consequences (list)",
+        "John Doe"
+      ],
+      [
+        "Apple Inc.",
+        "Steve Jobs"
+      ],
+      [
+        "Silicon Valley",
+        "located_in"
+      ],
+      [
+        "EMPLOYED_IN",
+        "John Doe"
+      ],
+      [
+        "Organization",
+        "Page 9 - Course Registration Guidelines (page_number)"
+      ],
+      [
+        "Google DeepMind",
+        "subsidiary_of"
+      ],
+      [
+        "Length",
+        "Nile River"
+      ],
+      [
+        "Location",
+        "Unnamed_Table (table)"
+      ],
+      [
+        "Equivalent Subjects Mapping Table (table)",
+        "Project X"
+      ],
+      [
+        "Apple Inc.",
+        "located_in"
+      ],
+      [
+        "Decision Number 605/QĐ-ĐHCNTT (header)",
+        "location"
+      ],
+      [
+        "Amazon",
+        "Trường Đại học Công nghệ Thông tin (header)"
+      ],
+      [
+        "LOCATION",
+        "Page 101 (page_number)"
+      ],
+      [
+        "Master's Program Curriculum Framework Table (table)",
+        "Organization"
+      ],
+      [
+        "Apple Inc.",
+        "Thesis Supervisor Qualification Criteria (list)"
+      ],
+      [
+        "CVHT Responsibilities and Reporting Requirements (list)",
+        "Person"
+      ],
+      [
+        "Organization",
+        "Page 11: Thesis Defense Conditions (page_number)"
+      ],
+      [
+        "Information Technology",
+        "part_of"
+      ],
+      [
+        "Silicon Valley",
+        "TP.HCM (header)"
+      ],
+      [
+        "Gerd Homann",
+        "founded_by"
+      ],
+      [
+        "Decision Number 605/QĐ-ĐHCNTT (header)",
+        "organization"
+      ],
+      [
+        "Empty Table Placeholder (table)",
+        "World Health Organization"
+      ],
+      [
+        "Located In",
+        "TechCorp"
+      ],
+      [
+        "Location",
+        "Điều kiện Đăng ký Chương trình Song ngành (list)"
+      ],
+      [
+        "Acme Corp",
+        "Page 37 (page_number)"
+      ],
+      [
+        "John Doe",
+        "employed by"
+      ]
+    ],
+    "count": 183,
+    "create_time": 1779125408,
+    "update_time": 1779125408,
+    "_id": "doc-1e426b10b4427b38bab54e7da71a7a78"
+  }
+}
