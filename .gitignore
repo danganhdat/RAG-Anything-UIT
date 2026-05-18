@@ -6,7 +6,6 @@ __pycache__/
 venv/
 .venv/
 milvus_lite.db/
-rag_workdir/
 rag_workdir_min/
 *.log
 *.egg-info/
