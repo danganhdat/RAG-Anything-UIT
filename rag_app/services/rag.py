@@ -150,10 +150,22 @@ def _patch_lightrag_milvus_for_lite() -> None:
             f"[{self.workspace}] Created vector index for {self.namespace} (scalar indexes skipped for Milvus Lite)"
         )
 
+    async def _patched_index_done_callback(self):
+        try:
+            self._client.flush(collection_name=self.final_namespace)
+            milvus_impl.logger.info(
+                f"[{self.workspace}] Flushed collection {self.namespace}"
+            )
+        except Exception as e:
+            milvus_impl.logger.warning(
+                f"[{self.workspace}] Flush failed for {self.namespace}: {e}"
+            )
+
     storage_cls.delete_entity = _patched_delete_entity
     storage_cls.delete_entity_relation = _patched_delete_entity_relation
     storage_cls.delete = _patched_delete
     storage_cls._create_indexes_after_collection = _patched_create_indexes
+    storage_cls.index_done_callback = _patched_index_done_callback
     storage_cls._rag_anything_uit_patched = True
 
 
