@@ -1,9 +1,12 @@
 from __future__ import annotations
 
+from configparser import ConfigParser
 import logging
 import os
+from pathlib import Path
 
 import numpy as np
+from lightrag.kg import STORAGE_ENV_REQUIREMENTS
 from lightrag.rerank import generic_rerank_api
 from lightrag.utils import EmbeddingFunc
 from raganything import RAGAnything
@@ -16,6 +19,29 @@ from rag_app.adapters.llm import LLMAdapter
 from rag_app.core.config import Settings
 
 log = logging.getLogger(__name__)
+
+
+def _write_lightrag_milvus_config(settings: Settings) -> Path:
+    """Write config.ini so LightRAG's Milvus code reads the local DB path.
+
+    We avoid setting MILVUS_URI as an env var because pymilvus reads it at
+    import time and may reject local file paths.  LightRAG falls back to
+    config.ini when the env var is absent.
+    """
+    config_path = Path.cwd() / "config.ini"
+    parser = ConfigParser()
+    if config_path.exists():
+        parser.read(config_path, encoding="utf-8")
+    if not parser.has_section("milvus"):
+        parser.add_section("milvus")
+    parser.set("milvus", "uri", settings.milvus_db_path)
+    if settings.milvus_db_name.strip():
+        parser.set("milvus", "db_name", settings.milvus_db_name.strip())
+    elif parser.has_option("milvus", "db_name"):
+        parser.remove_option("milvus", "db_name")
+    with config_path.open("w", encoding="utf-8") as fh:
+        parser.write(fh)
+    return config_path
 
 
 def _patch_raganything_vlm_query_guard() -> None:
@@ -77,14 +103,28 @@ class RAGService:
             result = await emb.embed_texts(texts)
             return np.array(result)
 
-        log.info(
-            "Vector storage: NanoVectorDBStorage (working_dir=%s)",
-            settings.rag_working_dir,
-        )
+        if settings.vector_storage == "MilvusVectorDBStorage":
+            STORAGE_ENV_REQUIREMENTS["MilvusVectorDBStorage"] = ["MILVUS_DB_NAME"]
+            os.environ.pop("MILVUS_URI", None)
+            os.environ["MILVUS_DB_NAME"] = settings.milvus_db_name.strip()
+            config_path = _write_lightrag_milvus_config(settings)
+            log.info(
+                "Vector storage: MilvusVectorDBStorage (uri=%s, config=%s)",
+                settings.milvus_db_path,
+                config_path,
+            )
+        else:
+            log.info(
+                "Vector storage: %s (working_dir=%s)",
+                settings.vector_storage,
+                settings.rag_working_dir,
+            )
 
         _patch_raganything_vlm_query_guard()
 
-        lightrag_kwargs: dict = {}
+        lightrag_kwargs: dict = {
+            "vector_storage": settings.vector_storage,
+        }
 
         if settings.reranker_enabled:
             api_key = settings.openrouter_api_key

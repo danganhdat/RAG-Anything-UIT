@@ -51,6 +51,9 @@ class Settings(BaseSettings):
     summary_language: str = "Vietnamese"
     query_user_prompt: str = "Always respond in Vietnamese (Tiếng Việt). Use Vietnamese terminology."
 
+    # LightRAG vector storage backend
+    vector_storage: str = "NanoVectorDBStorage"
+
     # RAGAnything processing
     enable_image_processing: bool = True
     enable_table_processing: bool = True

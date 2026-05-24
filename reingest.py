@@ -39,6 +39,18 @@ def clear_workdir(workdir: str) -> None:
         log.info("Cleared %s", workdir)
 
 
+def clear_milvus_storage(db_path: str) -> None:
+    """Remove Milvus Lite storage (file or directory)."""
+    p = Path(db_path)
+    if not p.exists():
+        return
+    if p.is_dir():
+        shutil.rmtree(p)
+    else:
+        p.unlink()
+    log.info("Removed Milvus storage: %s", p)
+
+
 def prepare_content_list(raw: list[dict]) -> list[dict]:
     """Fix relative img_path to absolute and filter unsupported types."""
     supported = {"text", "image", "table", "equation"}
@@ -73,6 +85,7 @@ async def main() -> None:
     log.info("Content list: %d items — %s", len(content_list), types)
 
     clear_workdir(settings.rag_working_dir)
+    clear_milvus_storage(settings.milvus_db_path)
 
     container = ServiceContainer(settings)
     await container.startup()
