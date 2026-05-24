@@ -16,7 +16,9 @@ from rag_app.services.container import ServiceContainer
 
 log = logging.getLogger(__name__)
 
-CONTENT_LIST = Path(
+_SCRIPT_DIR = Path(__file__).resolve().parent
+
+CONTENT_LIST = _SCRIPT_DIR / Path(
     "output/cam_nang_sau_dai_hoc_2025_0_725c0097/"
     "cam_nang_sau_dai_hoc_2025_0/hybrid_auto/"
     "cam_nang_sau_dai_hoc_2025_0_content_list.json"
@@ -74,6 +76,17 @@ async def main() -> None:
 
     container = ServiceContainer(settings)
     await container.startup()
+
+    # insert_content_list writes to doc_status *before* calling
+    # lightrag.ainsert, which then sees the doc as a duplicate.
+    # Bypass the dedup check entirely — we just wiped the workdir,
+    # so everything is new by definition.
+    _orig_filter = container.rag.lightrag.doc_status.filter_keys
+
+    async def _no_dedup(keys):
+        return keys
+
+    container.rag.lightrag.doc_status.filter_keys = _no_dedup
 
     try:
         await container.rag.insert_content_list(

@@ -12,3 +12,5 @@ dist/
 build/
 .mypy_cache/
 .ruff_cache/
+config.ini
+milvus_lite.db/

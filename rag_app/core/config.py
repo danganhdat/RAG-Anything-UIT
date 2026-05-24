@@ -1,14 +1,17 @@
 from __future__ import annotations
 
 from functools import lru_cache
+from pathlib import Path
 
-from pydantic import Field
+from pydantic import Field, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=str(_PROJECT_ROOT / ".env"),
         env_file_encoding="utf-8",
         case_sensitive=False,
         extra="ignore",
@@ -27,6 +30,7 @@ class Settings(BaseSettings):
 
     # Milvus
     milvus_db_path: str = "./milvus_lite.db"
+    milvus_db_name: str = ""
     milvus_collection: str = "rag_multimodal_collection"
 
     # HTTP / retry
@@ -47,9 +51,6 @@ class Settings(BaseSettings):
     summary_language: str = "Vietnamese"
     query_user_prompt: str = "Always respond in Vietnamese (Tiếng Việt). Use Vietnamese terminology."
 
-    # LightRAG storage
-    vector_storage: str = "NanoVectorDBStorage"
-
     # RAGAnything processing
     enable_image_processing: bool = True
     enable_table_processing: bool = True
@@ -65,6 +66,14 @@ class Settings(BaseSettings):
 
     # Logging
     log_level: str = "INFO"
+
+    @model_validator(mode="after")
+    def _resolve_paths(self) -> Settings:
+        """Resolve relative paths against the project root so they work
+        regardless of the current working directory or OS (WSL / Windows)."""
+        self.rag_working_dir = str((_PROJECT_ROOT / self.rag_working_dir).resolve())
+        self.milvus_db_path = str((_PROJECT_ROOT / self.milvus_db_path).resolve())
+        return self
 
 
 @lru_cache

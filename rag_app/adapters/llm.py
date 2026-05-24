@@ -22,7 +22,10 @@ def _detect_mime(path: str | Path) -> str:
 
 def _extract_content(data: dict) -> str:
     """Extract text content from an OpenRouter response, handling thinking models."""
-    msg = data["choices"][0]["message"]
+    if not data or not data.get("choices"):
+        log.warning("LLM returned empty or malformed response: %s", data)
+        return ""
+    msg = data["choices"][0].get("message") or {}
     content = msg.get("content")
     if not content:
         for fallback_key in ("reasoning_content", "reasoning"):
