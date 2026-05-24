@@ -44,6 +44,119 @@ def _write_lightrag_milvus_config(settings: Settings) -> Path:
     return config_path
 
 
+def _patch_lightrag_milvus_for_lite() -> None:
+    """Fix Milvus Lite compatibility issues in LightRAG's Milvus storage.
+
+    1. Delete methods: Milvus Lite returns a list from client.delete(),
+       but LightRAG calls result.get() expecting a dict.
+    2. Scalar indexes: INVERTED indexes fail on Milvus Lite with
+       "missing required metric_type". Skip them for local file URIs.
+    """
+    import lightrag.kg.milvus_impl as milvus_impl
+
+    storage_cls = milvus_impl.MilvusVectorDBStorage
+    if getattr(storage_cls, "_rag_anything_uit_patched", False):
+        return
+
+    def _delete_count(result: object) -> int:
+        if result is None:
+            return 0
+        if isinstance(result, dict):
+            v = result.get("delete_count", 0)
+            return int(v) if isinstance(v, (int, float)) else 0
+        if isinstance(result, list):
+            return len(result)
+        return 0
+
+    async def _patched_delete_entity(self, entity_name: str) -> None:
+        try:
+            entity_id = milvus_impl.compute_mdhash_id(entity_name, prefix="ent-")
+            result = self._client.delete(
+                collection_name=self.final_namespace, pks=[entity_id]
+            )
+            deleted = _delete_count(result)
+            milvus_impl.logger.debug(
+                f"[{self.workspace}] delete_entity {entity_name}: {deleted}"
+            )
+        except Exception as e:
+            milvus_impl.logger.error(
+                f"[{self.workspace}] Error deleting entity {entity_name}: {e}"
+            )
+
+    async def _patched_delete_entity_relation(self, entity_name: str) -> None:
+        try:
+            self._ensure_collection_loaded()
+            expr = f'src_id == "{entity_name}" or tgt_id == "{entity_name}"'
+            results = self._client.query(
+                collection_name=self.final_namespace,
+                filter=expr,
+                output_fields=["id"],
+            )
+            if not results:
+                return
+            relation_ids = [item["id"] for item in results]
+            if relation_ids:
+                dr = self._client.delete(
+                    collection_name=self.final_namespace, pks=relation_ids
+                )
+                milvus_impl.logger.debug(
+                    f"[{self.workspace}] delete_entity_relation {entity_name}: {_delete_count(dr)}"
+                )
+        except Exception as e:
+            milvus_impl.logger.error(
+                f"[{self.workspace}] Error deleting relations for {entity_name}: {e}"
+            )
+
+    async def _patched_delete(self, ids: list[str]) -> None:
+        try:
+            self._ensure_collection_loaded()
+            result = self._client.delete(
+                collection_name=self.final_namespace, pks=ids
+            )
+            milvus_impl.logger.debug(
+                f"[{self.workspace}] delete {_delete_count(result)} vectors from {self.namespace}"
+            )
+        except Exception as e:
+            milvus_impl.logger.error(
+                f"[{self.workspace}] Error deleting vectors from {self.namespace}: {e}"
+            )
+
+    original_create_indexes = storage_cls._create_indexes_after_collection
+
+    def _patched_create_indexes(self):
+        uri = self._get_milvus_connection_kwargs(include_db_name=False).get("uri", "")
+        if "://" in str(uri):
+            return original_create_indexes(self)
+        index_params = self._get_index_params()
+        vector_index_params = self.index_config.build_index_params(
+            index_params, field_name="vector"
+        )
+        if isinstance(vector_index_params, dict):
+            self._client.create_index(
+                collection_name=self.final_namespace,
+                field_name=vector_index_params["field_name"],
+                index_params={
+                    "index_type": vector_index_params["index_type"],
+                    "metric_type": vector_index_params["metric_type"],
+                    "params": vector_index_params["params"],
+                },
+            )
+        else:
+            self._client.create_index(
+                collection_name=self.final_namespace,
+                index_params=vector_index_params,
+            )
+        milvus_impl.logger.info(
+            f"[{self.workspace}] Created vector index for {self.namespace} (scalar indexes skipped for Milvus Lite)"
+        )
+
+    storage_cls.delete_entity = _patched_delete_entity
+    storage_cls.delete_entity_relation = _patched_delete_entity_relation
+    storage_cls.delete = _patched_delete
+    storage_cls._create_indexes_after_collection = _patched_create_indexes
+    storage_cls._rag_anything_uit_patched = True
+
+
 def _patch_raganything_vlm_query_guard() -> None:
     """Guard RAGAnything's VLM prompt processing against None prompts.
 
@@ -108,6 +221,7 @@ class RAGService:
             os.environ.pop("MILVUS_URI", None)
             os.environ["MILVUS_DB_NAME"] = settings.milvus_db_name.strip()
             config_path = _write_lightrag_milvus_config(settings)
+            _patch_lightrag_milvus_for_lite()
             log.info(
                 "Vector storage: MilvusVectorDBStorage (uri=%s, config=%s)",
                 settings.milvus_db_path,
