@@ -2,8 +2,6 @@ import asyncio
 import logging
 import sys
 
-# from lightrag.base import QueryParam
-
 from rag_app.core.config import get_settings
 from rag_app.core.logging import setup_logging
 from rag_app.services.container import ServiceContainer
@@ -20,8 +18,11 @@ async def main(query_text: str) -> None:
 
     try:
         log.info("Query: %s", query_text)
-        # answer = await container.rag.aquery(query_text, param=QueryParam(mode="hybrid"))
-        answer = await container.rag.aquery(query_text, mode="hybrid") 
+        answer = await container.rag.aquery(
+            query_text,
+            mode="hybrid",
+            user_prompt=settings.query_user_prompt or None,
+        )
         print(f"\n{answer}")
     finally:
         await container.shutdown()

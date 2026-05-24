@@ -1,6 +1,6 @@
 raganything[all]
 pymilvus>=2.4,<3.0
-milvus-lite>=2.4,<3.0
+milvus-lite
 aiohttp>=3.9,<4.0
 pydantic>=2.0,<3.0
 pydantic-settings>=2.0,<3.0

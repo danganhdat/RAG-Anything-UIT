@@ -4,8 +4,8 @@ __pycache__/
 .env
 .env.local
 venv/
+venv_powershell/
 .venv/
-rag_workdir_min/
 *.log
 *.egg-info/
 dist/

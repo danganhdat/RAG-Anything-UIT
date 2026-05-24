@@ -1,4 +1,11 @@
 import os
+import sys
+
+if __name__ == "__main__":
+    from streamlit.web.cli import main as st_main
+    sys.argv = ["streamlit", "run", __file__]
+    st_main()
+    sys.exit()
 
 import requests
 import streamlit as st

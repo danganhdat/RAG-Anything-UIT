@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import logging
 
 from raganything import RAGAnything
@@ -31,10 +32,13 @@ class ServiceContainer:
 
     async def shutdown(self) -> None:
         log.info("Shutting down services...")
+        close_tasks = []
         if self.llm:
-            await self.llm.close()
+            close_tasks.append(self.llm.close())
         if self.emb:
-            await self.emb.close()
+            close_tasks.append(self.emb.close())
+        if close_tasks:
+            await asyncio.gather(*close_tasks)
         log.info("All services stopped")
 
     def get_ingestion_service(self) -> IngestionService:
