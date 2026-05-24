@@ -37,13 +37,19 @@ class RAGService:
             log.info("Vietnamese prompts activated")
 
         async def llm_func(prompt: str, **kwargs: object) -> str:
-            return await llm.chat(prompt)
+            return await llm.chat(
+                prompt,
+                system_prompt=kwargs.get("system_prompt"),
+                history_messages=kwargs.get("history_messages"),
+            )
 
         async def embed_func(texts: list[str]) -> np.ndarray:
             result = await emb.embed_texts(texts)
             return np.array(result)
 
-        lightrag_kwargs: dict = {}
+        lightrag_kwargs: dict = {
+            "vector_storage": settings.vector_storage,
+        }
 
         if settings.reranker_enabled:
             api_key = settings.openrouter_api_key

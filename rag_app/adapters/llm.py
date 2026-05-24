@@ -3,6 +3,7 @@ from __future__ import annotations
 import base64
 import logging
 import mimetypes
+import re
 from pathlib import Path
 from typing import Any
 
@@ -11,10 +12,26 @@ from rag_app.core.config import Settings
 
 log = logging.getLogger(__name__)
 
+_THINK_RE = re.compile(r"<think>.*?</think>\s*", re.DOTALL)
+
 
 def _detect_mime(path: str | Path) -> str:
     mime, _ = mimetypes.guess_type(str(path))
     return mime or "image/png"
+
+
+def _extract_content(data: dict) -> str:
+    """Extract text content from an OpenRouter response, handling thinking models."""
+    msg = data["choices"][0]["message"]
+    content = msg.get("content")
+    if not content:
+        for fallback_key in ("reasoning_content", "reasoning"):
+            if msg.get(fallback_key):
+                content = msg[fallback_key]
+                break
+    if not content:
+        return ""
+    return _THINK_RE.sub("", content).strip()
 
 
 class LLMAdapter(BaseOpenRouterClient):
@@ -28,17 +45,26 @@ class LLMAdapter(BaseOpenRouterClient):
         self,
         prompt: str,
         *,
+        system_prompt: str | None = None,
+        history_messages: list[dict[str, Any]] | None = None,
         max_tokens: int = 2048,
         temperature: float = 0.5,
     ) -> str:
+        messages: list[dict[str, Any]] = []
+        if system_prompt:
+            messages.append({"role": "system", "content": system_prompt})
+        if history_messages:
+            messages.extend(history_messages)
+        messages.append({"role": "user", "content": prompt})
+
         payload: dict[str, Any] = {
             "model": self._settings.llm_text_model,
-            "messages": [{"role": "user", "content": prompt}],
+            "messages": messages,
             "max_tokens": max_tokens,
             "temperature": temperature,
         }
         data = await self._post_with_retry(self._chat_url, payload)
-        return data["choices"][0]["message"]["content"]
+        return _extract_content(data)
 
     async def chat_with_image(
         self,
@@ -60,7 +86,10 @@ class LLMAdapter(BaseOpenRouterClient):
                 b64 = base64.b64encode(f.read()).decode("utf-8")
             built_messages = self._build_messages(prompt, b64, _detect_mime(image_path), system_prompt)
         else:
-            raise ValueError("Either image_path, image_data, or messages must be provided")
+            # No image — fall back to text-only chat (used for table/equation analysis)
+            return await self.chat(
+                prompt, system_prompt=system_prompt, max_tokens=max_tokens, temperature=temperature,
+            )
 
         payload: dict[str, Any] = {
             "model": self._settings.llm_vlm_model,
@@ -69,7 +98,7 @@ class LLMAdapter(BaseOpenRouterClient):
             "temperature": temperature,
         }
         data = await self._post_with_retry(self._chat_url, payload)
-        return data["choices"][0]["message"]["content"]
+        return _extract_content(data)
 
     @staticmethod
     def _build_messages(
