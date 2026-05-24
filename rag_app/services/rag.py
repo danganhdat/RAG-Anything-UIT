@@ -9,6 +9,8 @@ from lightrag.utils import EmbeddingFunc
 from raganything import RAGAnything
 from raganything.config import RAGAnythingConfig
 
+from raganything import register_prompt_language, set_prompt_language
+
 from rag_app.adapters.embeddings import EmbeddingAdapter
 from rag_app.adapters.llm import LLMAdapter
 from rag_app.core.config import Settings
@@ -26,6 +28,13 @@ class RAGService:
         emb: EmbeddingAdapter,
     ) -> RAGAnything:
         os.environ.setdefault("SUMMARY_LANGUAGE", settings.summary_language)
+
+        if settings.summary_language.lower() == "vietnamese":
+            from rag_app.prompts_vi import PROMPTS_VI
+
+            register_prompt_language("vi", PROMPTS_VI)
+            set_prompt_language("vi")
+            log.info("Vietnamese prompts activated")
 
         async def llm_func(prompt: str, **kwargs: object) -> str:
             return await llm.chat(prompt)
@@ -53,7 +62,17 @@ class RAGService:
             lightrag_kwargs["rerank_model_func"] = rerank_func
             log.info("Reranker enabled: model=%s", model)
 
-        config = RAGAnythingConfig(working_dir=settings.rag_working_dir)
+        config = RAGAnythingConfig(
+            working_dir=settings.rag_working_dir,
+            enable_image_processing=settings.enable_image_processing,
+            enable_table_processing=settings.enable_table_processing,
+            enable_equation_processing=settings.enable_equation_processing,
+            parser=settings.rag_parser,
+            parse_method=settings.parse_method,
+            context_window=settings.context_window,
+            context_mode=settings.context_mode,
+            max_context_tokens=settings.max_context_tokens,
+        )
         rag = RAGAnything(
             config=config,
             llm_model_func=llm_func,

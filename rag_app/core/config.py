@@ -47,6 +47,16 @@ class Settings(BaseSettings):
     summary_language: str = "Vietnamese"
     query_user_prompt: str = "Always respond in Vietnamese (Tiếng Việt). Use Vietnamese terminology."
 
+    # RAGAnything processing
+    enable_image_processing: bool = True
+    enable_table_processing: bool = True
+    enable_equation_processing: bool = True
+    rag_parser: str = "mineru"
+    parse_method: str = "auto"
+    context_window: int = 1
+    context_mode: str = "page"
+    max_context_tokens: int = 2000
+
     # MinerU parser — "cuda", "cpu", or "mps" (auto-detects if not set)
     mineru_device: str = "cuda"
 

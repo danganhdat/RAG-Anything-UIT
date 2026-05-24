@@ -12,13 +12,13 @@ log = logging.getLogger(__name__)
 
 
 class IngestionService:
-    """Handles PDF ingestion via RAGAnything's MinerU pipeline."""
+    """Handles document ingestion via RAGAnything's processing pipeline."""
 
     def __init__(self, rag: RAGAnything, settings: Settings) -> None:
         self._rag = rag
         self._settings = settings
 
-    async def ingest_pdf(
+    async def ingest_document(
         self,
         path: Path,
         *,
@@ -26,7 +26,7 @@ class IngestionService:
         end_page: int | None = None,
     ) -> None:
         if not path.exists():
-            raise FileNotFoundError(f"PDF not found: {path}")
+            raise FileNotFoundError(f"File not found: {path}")
 
         kwargs: dict[str, int] = {}
         if start_page is not None:
@@ -45,3 +45,14 @@ class IngestionService:
             raise IngestionError(f"Failed to ingest {path.name}: {exc}") from exc
 
         log.info("Ingestion completed: %s", path.name)
+
+    async def ingest_pdf(
+        self,
+        path: Path,
+        *,
+        start_page: int | None = None,
+        end_page: int | None = None,
+    ) -> None:
+        return await self.ingest_document(
+            path, start_page=start_page, end_page=end_page,
+        )
