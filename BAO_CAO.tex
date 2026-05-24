@@ -1,0 +1,908 @@
+\documentclass[12pt,a4paper]{article}
+
+% ── Encoding & Language ──────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage[vietnamese]{babel}
+
+% ── Page layout ──────────────────────────────────────────────────
+\usepackage[
+  top=2.5cm, bottom=2.5cm,
+  left=3cm,  right=2cm
+]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ── Packages ─────────────────────────────────────────────────────
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{tcolorbox}
+
+% ── Hyperref config ──────────────────────────────────────────────
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!70!black,
+  urlcolor=blue!70!black,
+  citecolor=blue!70!black,
+  pdfauthor={Nhom RAG-Anything-UIT},
+  pdftitle={Bao cao he thong RAG-Anything-UIT},
+}
+
+% ── Code listing style ───────────────────────────────────────────
+\definecolor{codebg}{RGB}{245,245,245}
+\definecolor{codeframe}{RGB}{200,200,200}
+\definecolor{codekw}{RGB}{0,120,180}
+\definecolor{codecomment}{RGB}{100,140,80}
+\definecolor{codestr}{RGB}{180,80,0}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{codebg},
+  frame=single,
+  rulecolor=\color{codeframe},
+  keywordstyle=\color{codekw}\bfseries,
+  commentstyle=\color{codecomment}\itshape,
+  stringstyle=\color{codestr},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4,
+  showstringspaces=false,
+  captionpos=b,
+  xleftmargin=1em,
+  xrightmargin=1em,
+  aboveskip=1em,
+  belowskip=1em,
+}
+
+\lstdefinelanguage{pseudo}{
+  morekeywords={if,else,for,while,return,def,class,async,await,import,from,try,except,raise,with,as,None,True,False,not,and,or,in,is},
+  sensitive=true,
+  morecomment=[l]{\#},
+  morestring=[b]",
+  morestring=[b]',
+}
+
+% ── Header/Footer ────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textit{Báo cáo hệ thống RAG-Anything-UIT}}
+\fancyhead[R]{\small\textit{Nhóm RAG-Anything-UIT}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ── Title format ─────────────────────────────────────────────────
+\titleformat{\section}{\Large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection.}{0.5em}{}
+
+% ── Custom box ───────────────────────────────────────────────────
+\newtcolorbox{diagrambox}[1][]{
+  colback=codebg,
+  colframe=codeframe,
+  fontupper=\ttfamily\small,
+  #1
+}
+
+% =====================================================================
+\begin{document}
+
+% ── Title page ───────────────────────────────────────────────────
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+{\Large\textbf{ĐẠI HỌC QUỐC GIA TP. HỒ CHÍ MINH}}\\[0.3cm]
+{\Large\textbf{TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN}}\\[2.5cm]
+
+{\Huge\bfseries BÁO CÁO CHI TIẾT}\\[0.5cm]
+{\Huge\bfseries HỆ THỐNG RAG-ANYTHING-UIT}\\[1cm]
+
+{\Large Hệ thống Truy xuất và Sinh câu trả lời\\Đa phương thức dựa trên Đồ thị Tri thức}\\[3cm]
+
+{\large\textbf{Nhóm thực hiện:} Nhóm RAG-Anything-UIT}\\[0.5cm]
+{\large\textbf{Ngày báo cáo:} Tháng 5/2026}\\[3cm]
+
+\vfill
+{\large TP. Hồ Chí Minh, 2026}
+\end{titlepage}
+
+% ── Table of Contents ────────────────────────────────────────────
+\newpage
+\tableofcontents
+\newpage
+
+% =====================================================================
+\section{Giới thiệu tổng quan}
+% =====================================================================
+
+\subsection{Bối cảnh và động lực}
+
+Trong bối cảnh các mô hình ngôn ngữ lớn (Large Language Models --- LLM) ngày càng phổ biến, một trong những hạn chế lớn nhất của chúng là \textbf{hiện tượng ``ảo giác'' (hallucination)} --- tức mô hình tạo ra thông tin sai lệch nhưng trông có vẻ hợp lý. Nguyên nhân chính là do LLM chỉ dựa trên kiến thức được học trong quá trình huấn luyện, không có khả năng truy cập thông tin mới hoặc dữ liệu chuyên ngành cụ thể.
+
+\textbf{Retrieval-Augmented Generation (RAG)} ra đời để giải quyết vấn đề này bằng cách kết hợp khả năng sinh văn bản của LLM với cơ chế truy xuất thông tin từ nguồn dữ liệu bên ngoài. Tuy nhiên, các hệ thống RAG truyền thống vẫn còn nhiều hạn chế:
+
+\begin{itemize}
+  \item \textbf{Chỉ xử lý văn bản thuần túy:} không thể hiểu hình ảnh, bảng biểu, công thức toán học trong tài liệu.
+  \item \textbf{Truy xuất dựa trên vector đơn thuần:} chỉ tìm kiếm tương tự ngữ nghĩa, thiếu khả năng suy luận trên mối quan hệ giữa các khái niệm.
+  \item \textbf{Thiếu hỗ trợ đa ngôn ngữ:} đặc biệt là tiếng Việt --- một ngôn ngữ có cấu trúc phức tạp.
+\end{itemize}
+
+\subsection{Mục tiêu của nhóm}
+
+Nhóm đặt ra mục tiêu xây dựng một hệ thống RAG toàn diện, giải quyết đồng thời các hạn chế trên:
+
+\begin{enumerate}
+  \item \textbf{Đa phương thức (Multimodal):} Xử lý được văn bản, hình ảnh, bảng biểu, và công thức toán học trong cùng một pipeline.
+  \item \textbf{Đồ thị tri thức (Knowledge Graph):} Sử dụng đồ thị tri thức để nắm bắt mối quan hệ giữa các thực thể, cho phép suy luận sâu hơn.
+  \item \textbf{Hỗ trợ tiếng Việt:} Toàn bộ prompt, giao diện người dùng, và kết quả trả lời đều bằng tiếng Việt.
+  \item \textbf{Kiến trúc production-ready:} API RESTful, giao diện chat thân thiện, xử lý lỗi hoàn chỉnh.
+\end{enumerate}
+
+\subsection{Tổng quan giải pháp}
+
+Nhóm xây dựng hệ thống \textbf{RAG-Anything-UIT} bằng cách kết hợp các công nghệ nền tảng:
+
+\begin{table}[H]
+\centering
+\caption{Các thành phần công nghệ chính}
+\begin{tabular}{lll}
+\toprule
+\textbf{Thành phần} & \textbf{Công nghệ} & \textbf{Vai trò} \\
+\midrule
+Phân tích tài liệu & MinerU & Trích xuất nội dung đa phương thức \\
+RAG Engine & LightRAG + RAG-Anything & Đồ thị tri thức + truy vấn thông minh \\
+LLM Provider & OpenRouter (Qwen) & Sinh câu trả lời, phân tích nội dung \\
+Vector Database & NanoVectorDB / Milvus & Lưu trữ và tìm kiếm vector \\
+Backend API & FastAPI & REST API \\
+Giao diện & Streamlit & Chat UI tiếng Việt \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =====================================================================
+\section{Cơ sở lý thuyết}
+% =====================================================================
+
+\subsection{Retrieval-Augmented Generation (RAG)}
+
+\subsubsection{Định nghĩa}
+
+RAG (Retrieval-Augmented Generation) là một kiến trúc kết hợp hai thành phần chính:
+
+\begin{enumerate}
+  \item \textbf{Retriever (Bộ truy xuất):} Tìm kiếm các đoạn văn bản liên quan từ kho dữ liệu dựa trên câu hỏi của người dùng.
+  \item \textbf{Generator (Bộ sinh):} Sử dụng LLM để sinh câu trả lời dựa trên ngữ cảnh được truy xuất.
+\end{enumerate}
+
+\subsubsection{Quy trình hoạt động của RAG truyền thống}
+
+Quy trình RAG truyền thống gồm các bước:
+
+\begin{enumerate}
+  \item \textbf{Embedding:} Chuyển câu hỏi người dùng thành vector trong không gian ngữ nghĩa.
+  \item \textbf{Vector Search:} Tìm các chunk văn bản có vector tương tự nhất (cosine similarity).
+  \item \textbf{Top-K Selection:} Chọn K chunk có điểm tương tự cao nhất.
+  \item \textbf{LLM Prompt:} Ghép các chunk vào prompt cùng câu hỏi.
+  \item \textbf{Generation:} LLM sinh câu trả lời dựa trên ngữ cảnh.
+\end{enumerate}
+
+\subsubsection{Hạn chế của RAG truyền thống}
+
+\begin{table}[H]
+\centering
+\caption{Các hạn chế của RAG truyền thống}
+\begin{tabular}{p{4cm}p{9cm}}
+\toprule
+\textbf{Hạn chế} & \textbf{Mô tả} \\
+\midrule
+Mất ngữ cảnh rộng & Chunking chia nhỏ tài liệu, mất liên kết giữa các phần xa nhau \\
+Không nắm bắt quan hệ & Vector search chỉ đo độ tương tự, không hiểu quan hệ nhân-quả, phân cấp \\
+Nhạy cảm với cách diễn đạt & Câu hỏi phải dùng từ tương tự tài liệu mới tìm được \\
+Chỉ xử lý text & Bỏ qua hình ảnh, bảng biểu, biểu đồ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{LightRAG --- RAG dựa trên Đồ thị Tri thức}
+
+\subsubsection{Ý tưởng cốt lõi}
+
+LightRAG giải quyết hạn chế của RAG truyền thống bằng cách \textbf{xây dựng đồ thị tri thức (Knowledge Graph)} từ tài liệu. Thay vì chỉ lưu trữ các chunk văn bản dưới dạng vector, LightRAG trích xuất \textbf{thực thể (entities)} và \textbf{mối quan hệ (relationships)} giữa chúng, tạo thành một đồ thị có cấu trúc.
+
+\subsubsection{Pipeline nhập liệu của LightRAG}
+
+LightRAG xử lý tài liệu qua 5 bước chính:
+
+\paragraph{Bước 1 --- Enqueue (Xếp hàng):}
+Tài liệu được kiểm tra trùng lặp bằng hash MD5 của nội dung. Mỗi tài liệu được lưu vào \texttt{doc\_status} storage với trạng thái \texttt{PENDING}.
+
+\paragraph{Bước 2 --- Chunking (Chia nhỏ):}
+Tài liệu được chia thành các chunk dựa trên số lượng token. Tham số mặc định: \texttt{chunk\_token\_size = 1200}, \texttt{chunk\_overlap\_token\_size = 100}. Tokenizer mặc định: TikToken (model GPT-4o-mini). Mỗi chunk được gán \texttt{chunk\_order\_index} để giữ thứ tự ban đầu.
+
+\paragraph{Bước 3 --- Extract (Trích xuất thực thể và quan hệ):}
+Đây là bước quan trọng nhất. LLM được sử dụng để trích xuất thực thể và quan hệ từ mỗi chunk.
+
+Định dạng trích xuất thực thể:
+\begin{lstlisting}[language=pseudo]
+entity<|#|>{ten_thuc_the}<|#|>{loai}<|#|>{mo_ta}
+\end{lstlisting}
+
+Định dạng trích xuất quan hệ:
+\begin{lstlisting}[language=pseudo]
+relation<|#|>{nguon}<|#|>{dich}<|#|>{tu_khoa}<|#|>{mo_ta}<|#|>{trong_so}
+\end{lstlisting}
+
+Ví dụ với một đoạn văn bản về quy chế đào tạo:
+
+\begin{lstlisting}[language=pseudo]
+# Dau vao (chunk):
+"Nghien cuu sinh phai hoan thanh toi thieu 90 tin chi
+ trong thoi gian 3 nam. Hoi dong khoa hoc xet duyet
+ de cuong nghien cuu hang nam."
+
+# Dau ra (entities):
+entity<|#|>Nghien cuu sinh<|#|>person<|#|>Doi tuong dao tao bac tien si
+entity<|#|>Tin chi<|#|>concept<|#|>Don vi do luong khoi luong hoc tap
+entity<|#|>Hoi dong khoa hoc<|#|>organization<|#|>Co quan xet duyet
+
+# Dau ra (relations):
+relation<|#|>Nghien cuu sinh<|#|>Tin chi<|#|>yeu cau<|#|>NCS phai hoan thanh toi thieu 90 tin chi<|#|>9
+\end{lstlisting}
+
+Cơ chế Gleaning (Rà soát lại): Sau lần trích xuất đầu tiên, LLM được yêu cầu rà soát lại để tìm các thực thể/quan hệ bị bỏ sót. Số lần gleaning tối đa: \texttt{entity\_extract\_max\_gleaning = 10}.
+
+\paragraph{Bước 4 --- Merge (Hợp nhất):}
+Khi cùng một thực thể xuất hiện trong nhiều chunk, LightRAG thực hiện hợp nhất:
+
+\begin{itemize}
+  \item \textbf{Hợp nhất thực thể:} Lấy dữ liệu node hiện có, hợp nhất source IDs, loại bỏ mô tả trùng lặp, sử dụng LLM tóm tắt theo phương pháp Map-Reduce nếu vượt ngưỡng.
+  \item \textbf{Hợp nhất quan hệ:} Tương tự thực thể, nhưng thêm hợp nhất từ khóa và cộng dồn trọng số.
+\end{itemize}
+
+\paragraph{Bước 5 --- Store (Lưu trữ):}
+Dữ liệu được lưu vào nhiều lớp storage:
+
+\begin{table}[H]
+\centering
+\caption{Các lớp storage trong LightRAG}
+\begin{tabular}{p{3.5cm}p{5cm}p{4cm}}
+\toprule
+\textbf{Loại Storage} & \textbf{Mục đích} & \textbf{Backend mặc định} \\
+\midrule
+Vector DB & Tìm kiếm ngữ nghĩa (entities, relations, chunks) & NanoVectorDB \\
+Graph DB & Lưu cấu trúc đồ thị tri thức & NetworkX (GraphML) \\
+KV Store & Lưu metadata chi tiết & JSON files \\
+Doc Status & Theo dõi quá trình xử lý & JSON files \\
+LLM Cache & Tránh gọi LLM trùng lặp & JSON files \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Pipeline truy vấn của LightRAG}
+
+LightRAG cung cấp \textbf{6 chế độ truy vấn} khác nhau:
+
+\begin{table}[H]
+\centering
+\caption{Các chế độ truy vấn trong LightRAG}
+\begin{tabular}{p{2cm}p{5cm}p{5.5cm}}
+\toprule
+\textbf{Chế độ} & \textbf{Chiến lược} & \textbf{Khi nào sử dụng} \\
+\midrule
+naive & Tìm kiếm vector trên chunk thuần & Nhanh, không dùng đồ thị \\
+local & Tìm thực thể $\to$ truy vết quan hệ $\to$ lấy chunk & Câu hỏi chi tiết, cụ thể \\
+global & Tìm quan hệ $\to$ truy vết thực thể $\to$ lấy chunk & Câu hỏi tổng quan \\
+hybrid & Kết hợp local + global & Câu hỏi cân bằng (mặc định) \\
+mix & Đồ thị tri thức + vector thuần & Tận dụng cả hai nguồn \\
+bypass & Gửi thẳng cho LLM, không truy xuất & Test/so sánh \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Chi tiết quy trình truy vấn:}
+
+\begin{enumerate}
+  \item \textbf{Trích xuất từ khóa:} LLM phân tích câu hỏi thành high-level keywords (khái quát, dùng cho Global mode) và low-level keywords (cụ thể, dùng cho Local mode).
+  \item \textbf{Tìm kiếm trong đồ thị tri thức:}
+    \begin{itemize}
+      \item Local mode: Vector search trên \texttt{entities\_vdb} $\to$ duyệt cạnh liên quan $\to$ lấy chunk gốc.
+      \item Global mode: Vector search trên \texttt{relationships\_vdb} $\to$ truy ngược entity $\to$ lấy chunk gốc.
+    \end{itemize}
+  \item \textbf{Token-aware Truncation:} Cắt ngữ cảnh theo giới hạn (entities: 256 tokens, relations: 256 tokens, total: 4000 tokens).
+  \item \textbf{LLM Generation:} Sinh câu trả lời dựa trên ngữ cảnh đã xây dựng.
+\end{enumerate}
+
+\subsubsection{Xử lý đồng thời và caching}
+
+LightRAG hỗ trợ xử lý song song:
+
+\begin{table}[H]
+\centering
+\caption{Tham số xử lý đồng thời}
+\begin{tabular}{lcp{6cm}}
+\toprule
+\textbf{Tham số} & \textbf{Mặc định} & \textbf{Mô tả} \\
+\midrule
+\texttt{max\_parallel\_insert} & 16 & Số tài liệu xử lý song song \\
+\texttt{llm\_model\_max\_async} & 4 & Số lệnh gọi LLM đồng thời \\
+\texttt{embedding\_func\_max\_async} & 8 & Số lệnh gọi embedding đồng thời \\
+\texttt{embedding\_batch\_num} & 10 & Số text embedding trong 1 batch \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{RAG-Anything --- Mở rộng đa phương thức}
+
+\subsubsection{Vai trò của RAG-Anything}
+
+RAG-Anything là một lớp mở rộng phía trên LightRAG, bổ sung khả năng \textbf{xử lý nội dung đa phương thức}. Trong khi LightRAG chỉ xử lý văn bản, RAG-Anything cho phép hệ thống hiểu và tích hợp:
+
+\begin{itemize}
+  \item \textbf{Hình ảnh:} Biểu đồ, sơ đồ, ảnh minh họa, ảnh chụp.
+  \item \textbf{Bảng biểu:} Bảng dữ liệu, bảng so sánh, bảng thống kê.
+  \item \textbf{Công thức toán học:} Phương trình, biểu thức LaTeX.
+  \item \textbf{Nội dung generic:} Bất kỳ loại nội dung đặc biệt nào khác.
+\end{itemize}
+
+\subsubsection{Cách RAG-Anything xử lý nội dung đa phương thức}
+
+Quy trình xử lý:
+
+\begin{enumerate}
+  \item Tài liệu PDF được MinerU Parser trích xuất thành \texttt{content\_list.json}.
+  \item Mỗi item trong danh sách được xử lý theo loại:
+    \begin{itemize}
+      \item \textbf{Text items:} Chunking trực tiếp $\to$ Embedding.
+      \item \textbf{Image items:} VLM phân tích (Qwen2.5-VL-72B) $\to$ Mô tả chi tiết $\to$ Chunking $\to$ Embedding.
+      \item \textbf{Table items:} LLM phân tích cấu trúc $\to$ Tóm tắt ý nghĩa $\to$ Chunking $\to$ Embedding.
+      \item \textbf{Equation items:} LLM giải thích toán học $\to$ Mô tả ý nghĩa $\to$ Chunking $\to$ Embedding.
+    \end{itemize}
+  \item Tất cả enhanced captions được đưa vào LightRAG KG Pipeline.
+\end{enumerate}
+
+\subsubsection{Context Window --- Ngữ cảnh xung quanh}
+
+Một tính năng quan trọng của RAG-Anything là \textbf{context window}:
+
+\begin{itemize}
+  \item \texttt{context\_window = 1}: Lấy 1 trang trước và 1 trang sau phần tử hiện tại.
+  \item \texttt{context\_mode = "page"}: Đơn vị ngữ cảnh theo trang tài liệu.
+  \item \texttt{max\_context\_tokens = 2000}: Giới hạn token cho ngữ cảnh.
+\end{itemize}
+
+Điều này giúp VLM hiểu hình ảnh/bảng trong bối cảnh --- ví dụ: một biểu đồ nằm trong chương nào, minh họa cho nội dung gì.
+
+% =====================================================================
+\section{Thiết kế hệ thống}
+% =====================================================================
+
+\subsection{Kiến trúc tổng thể}
+
+Nhóm thiết kế hệ thống theo kiến trúc \textbf{layered (phân tầng)} kết hợp với \textbf{dependency injection}, gồm 5 tầng chính:
+
+\begin{enumerate}
+  \item \textbf{UI Layer (Streamlit):} Giao diện chat tiếng Việt, upload tài liệu, cấu hình truy vấn.
+  \item \textbf{API Layer (FastAPI):} REST API với các endpoint \texttt{/chat}, \texttt{/ingest}, \texttt{/health}, \texttt{/system/info}.
+  \item \textbf{Service Layer:} ServiceContainer quản lý vòng đời, RAGService khởi tạo RAGAnything, IngestionService xử lý tài liệu.
+  \item \textbf{Adapter Layer:} LLMAdapter (text + vision), EmbeddingAdapter, Reranker --- tất cả giao tiếp qua OpenRouter API.
+  \item \textbf{Storage Layer:} NanoVectorDB/Milvus (vector), NetworkX (graph), JSON KV Store (metadata).
+\end{enumerate}
+
+\subsection{Cấu trúc thư mục dự án}
+
+\begin{lstlisting}[language=pseudo,caption={Cấu trúc thư mục}]
+RAG-Anything-UIT/
+  rag_app/                  # Package chinh
+    core/                   # Ha tang (config, exceptions, logging)
+    adapters/               # LLM, Embedding, HTTP client
+    store/                  # Milvus vector store
+    services/               # RAGService, IngestionService, Container
+    api/                    # FastAPI app, routes, dependencies
+    prompts_vi.py           # Prompt tieng Viet
+
+  run_api.py                # Khoi dong FastAPI server
+  run_ui.py                 # Khoi dong Streamlit UI
+  ingest_pdf.py             # CLI nhap tai lieu
+  query_system.py           # CLI truy van
+  reingest.py               # CLI nhap lai tu content da parse
+
+  rag_workdir/              # Du lieu runtime (KG, vectors, KV)
+  output/                   # Ket qua MinerU extraction
+\end{lstlisting}
+
+\subsection{Các thành phần chính}
+
+\subsubsection{Core Module}
+
+\textbf{config.py --- Quản lý cấu hình:} Nhóm sử dụng Pydantic Settings để quản lý toàn bộ cấu hình hệ thống. Tất cả tham số được đọc từ file \texttt{.env} và validate tự động.
+
+Các tham số cấu hình quan trọng:
+
+\begin{table}[H]
+\centering
+\caption{Tham số cấu hình chính}
+\begin{tabular}{p{4.5cm}p{4cm}p{4.5cm}}
+\toprule
+\textbf{Tham số} & \textbf{Giá trị mặc định} & \textbf{Mô tả} \\
+\midrule
+\texttt{llm\_text\_model} & qwen/qwen3-30b-a3b & Mô hình text \\
+\texttt{llm\_vlm\_model} & qwen/qwen2.5-vl-72b & Mô hình vision \\
+\texttt{embed\_model} & qwen/qwen3-embed-8b & Mô hình embedding \\
+\texttt{embed\_dim} & 4096 & Chiều vector \\
+\texttt{reranker\_model} & cohere/rerank-v3.5 & Mô hình reranker \\
+\texttt{summary\_language} & Vietnamese & Ngôn ngữ \\
+\texttt{context\_window} & 1 & Số trang ngữ cảnh \\
+\texttt{max\_context\_tokens} & 2000 & Giới hạn token \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{exceptions.py --- Hệ thống ngoại lệ:} Nhóm thiết kế hệ thống ngoại lệ phân cấp:
+
+\begin{itemize}
+  \item \texttt{RAGAppError} (base)
+  \item \texttt{ConfigurationError} --- Lỗi cấu hình
+  \item \texttt{AdapterError} --- Lỗi giao tiếp API
+    \begin{itemize}
+      \item \texttt{RetryExhaustedError} --- Đã hết số lần thử lại
+    \end{itemize}
+  \item \texttt{VectorStoreError} --- Lỗi Milvus
+  \item \texttt{IngestionError} --- Lỗi nhập tài liệu
+\end{itemize}
+
+% =====================================================================
+\section{Pipeline nhập liệu tài liệu (Ingestion)}
+% =====================================================================
+
+\subsection{Giai đoạn 1: Phân tích tài liệu (MinerU)}
+
+\textbf{MinerU} là bộ phân tích tài liệu (document parser) được sử dụng để trích xuất nội dung có cấu trúc từ file PDF. MinerU hỗ trợ:
+
+\begin{itemize}
+  \item \textbf{Phát hiện layout tự động:} Nhận diện vùng text, hình ảnh, bảng, công thức.
+  \item \textbf{OCR tích hợp:} Nhận dạng văn bản trong hình ảnh.
+  \item \textbf{GPU acceleration:} Sử dụng CUDA để tăng tốc xử lý.
+\end{itemize}
+
+Cấu hình MinerU trong hệ thống:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Tham số} & \textbf{Giá trị} & \textbf{Mô tả} \\
+\midrule
+\texttt{rag\_parser} & \texttt{"mineru"} & Sử dụng MinerU parser \\
+\texttt{parse\_method} & \texttt{"auto"} & Tự động chọn phương pháp \\
+\texttt{mineru\_device} & \texttt{"cuda"} & GPU acceleration \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Giai đoạn 2: Phân tích nội dung đa phương thức}
+
+Sau khi MinerU trích xuất, RAG-Anything xử lý từng loại nội dung:
+
+\subsubsection{Xử lý hình ảnh}
+
+Hình ảnh được gửi đến VLM (Qwen2.5-VL-72B) với system prompt tiếng Việt: \textit{``Bạn là chuyên gia phân tích hình ảnh. Hãy cung cấp mô tả chi tiết và chính xác.''}
+
+VLM phân tích theo các tiêu chí:
+\begin{itemize}
+  \item Bố cục tổng thể và cách trình bày
+  \item Nhận diện đối tượng, con người, văn bản
+  \item Mối quan hệ giữa các yếu tố
+  \item Chi tiết kỹ thuật (nếu là biểu đồ/sơ đồ)
+\end{itemize}
+
+Kết quả trả về dạng JSON với \texttt{detailed\_description} và \texttt{entity\_info}.
+
+\subsubsection{Xử lý bảng biểu}
+
+Bảng dữ liệu được phân tích bởi LLM (Qwen3-30B-A3B) với system prompt: \textit{``Bạn là chuyên gia phân tích dữ liệu. Hãy cung cấp phân tích bảng chi tiết với các nhận định cụ thể.''}
+
+LLM trích xuất: cấu trúc bảng, ý nghĩa cột, xu hướng dữ liệu, mẫu hình thống kê.
+
+\subsubsection{Xử lý công thức toán học}
+
+Công thức LaTeX được phân tích bởi LLM với system prompt: \textit{``Bạn là chuyên gia toán học. Hãy cung cấp phân tích toán học chi tiết.''}
+
+LLM giải thích: ý nghĩa toán học, biến số, phép toán, lĩnh vực ứng dụng.
+
+\subsection{Giai đoạn 3: Xây dựng đồ thị tri thức}
+
+Sau khi tất cả nội dung đa phương thức đã được chuyển thành text (enhanced captions), toàn bộ được đưa vào pipeline LightRAG:
+
+\begin{enumerate}
+  \item \textbf{Chunking:} Chia thành chunks 1200 tokens với 100 tokens overlap.
+  \item \textbf{Entity/Relation Extraction:} LLM trích xuất thực thể và quan hệ.
+  \item \textbf{Gleaning:} Rà soát lại để tìm thực thể bị bỏ sót.
+  \item \textbf{Merge \& Deduplicate:} Hợp nhất, loại trùng lặp.
+  \item \textbf{Multi-Store Persistence:} Lưu vào Vector DB, Graph DB, KV Store.
+\end{enumerate}
+
+Kết quả lưu trữ trong \texttt{rag\_workdir/}:
+
+\begin{table}[H]
+\centering
+\caption{Các file dữ liệu runtime}
+\begin{tabular}{p{6.5cm}p{6.5cm}}
+\toprule
+\textbf{File} & \textbf{Nội dung} \\
+\midrule
+\texttt{graph\_chunk\_entity\_relation.graphml} & Đồ thị tri thức (nodes + edges) \\
+\texttt{vdb\_entities.json} & Vector embeddings của thực thể \\
+\texttt{vdb\_relationships.json} & Vector embeddings của quan hệ \\
+\texttt{vdb\_chunks.json} & Vector embeddings của chunks \\
+\texttt{kv\_store\_text\_chunks.json} & Nội dung text của chunks \\
+\texttt{kv\_store\_full\_docs.json} & Nội dung đầy đủ tài liệu \\
+\texttt{kv\_store\_llm\_response\_cache.json} & Cache phản hồi LLM \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =====================================================================
+\section{Pipeline truy vấn (Query)}
+% =====================================================================
+
+\subsection{Trích xuất từ khóa}
+
+Khi nhận câu hỏi từ người dùng, bước đầu tiên là trích xuất từ khóa bằng LLM:
+
+\begin{itemize}
+  \item \textbf{High-level keywords:} Từ khóa khái quát, dùng cho Global mode (tìm quan hệ).
+  \item \textbf{Low-level keywords:} Từ khóa cụ thể, dùng cho Local mode (tìm thực thể).
+\end{itemize}
+
+Ví dụ: Câu hỏi ``Nghiên cứu sinh cần hoàn thành bao nhiêu tín chỉ?''
+\begin{itemize}
+  \item High-level: ``đào tạo sau đại học'', ``chương trình tiến sĩ''
+  \item Low-level: ``nghiên cứu sinh'', ``tín chỉ'', ``yêu cầu tốt nghiệp''
+\end{itemize}
+
+\subsection{Các chế độ truy vấn}
+
+\subsubsection{Local Mode}
+
+\begin{enumerate}
+  \item Vector search trên \texttt{entities\_vdb} bằng low-level keywords.
+  \item Tìm entity ``Nghiên cứu sinh'', ``Tín chỉ'' trong đồ thị.
+  \item Duyệt edges liên quan: ``NCS $\to$ Tín chỉ: yêu cầu 90''.
+  \item Truy ngược chunks gốc qua \texttt{source\_ids}.
+\end{enumerate}
+
+\subsubsection{Global Mode}
+
+\begin{enumerate}
+  \item Vector search trên \texttt{relationships\_vdb} bằng high-level keywords.
+  \item Tìm quan hệ liên quan đến ``đào tạo''.
+  \item Truy ngược entities qua node đầu mút.
+  \item Lấy chunks gốc.
+\end{enumerate}
+
+\subsubsection{Hybrid Mode (Mặc định)}
+
+Kết hợp kết quả từ Local và Global, merge theo token budget: entities max 256 tokens, relations max 256 tokens, tổng max 4000 tokens.
+
+\subsubsection{Mix Mode}
+
+Kết hợp Hybrid với Naive (vector search thuần trên chunks), merge và deduplicate.
+
+\subsection{Reranking}
+
+Nhóm tích hợp \textbf{Cohere Rerank v3.5} qua OpenRouter API:
+
+\begin{lstlisting}[language=pseudo,caption={Cấu hình Reranker}]
+async def rerank_func(query, documents, top_n=None, **kwargs):
+    return await generic_rerank_api(
+        query=query,
+        documents=documents,
+        model="cohere/rerank-v3.5",
+        base_url="https://openrouter.ai/api/v1/rerank",
+        api_key=api_key,
+        top_n=top_n,
+    )
+\end{lstlisting}
+
+Reranker giúp:
+\begin{itemize}
+  \item Loại bỏ kết quả không liên quan mà vector search trả về nhầm.
+  \item Sắp xếp các kết quả theo thứ tự liên quan nhất.
+  \item Cải thiện đáng kể chất lượng câu trả lời.
+\end{itemize}
+
+\subsection{Sinh câu trả lời}
+
+Prompt được xây dựng với các thành phần:
+\begin{enumerate}
+  \item System prompt: Yêu cầu trả lời tiếng Việt.
+  \item Context: Entities, Relations, Chunks đã truy xuất.
+  \item Conversation History: Lịch sử hội thoại (nếu có).
+  \item User Query: Câu hỏi hiện tại.
+  \item User Prompt: ``Always respond in Vietnamese (Tiếng Việt). Use Vietnamese terminology.''
+\end{enumerate}
+
+% =====================================================================
+\section{Chi tiết triển khai}
+% =====================================================================
+
+\subsection{Adapter Layer --- Giao tiếp với LLM}
+
+\subsubsection{BaseOpenRouterClient}
+
+Nhóm thiết kế lớp base client với các tính năng:
+
+\begin{itemize}
+  \item \textbf{Session reuse:} Tái sử dụng kết nối HTTP qua \texttt{aiohttp.ClientSession}.
+  \item \textbf{Exponential backoff retry:} $2^{\text{attempt}}$ giây, tối đa 30 giây.
+  \item \textbf{Retryable status codes:} 429, 500, 502, 503, 504.
+  \item \textbf{Bearer token authentication:} Xác thực qua OpenRouter API key.
+\end{itemize}
+
+\subsubsection{LLMAdapter}
+
+Hai phương thức chính:
+
+\begin{itemize}
+  \item \texttt{chat()}: Text-only LLM (Qwen3-30B-A3B), temperature 0.5, hỗ trợ system prompt và history.
+  \item \texttt{chat\_with\_image()}: Vision LLM (Qwen2.5-VL-72B), temperature 0.2, input file path hoặc base64, fallback sang text-only nếu không có hình ảnh.
+\end{itemize}
+
+Đặc biệt, LLMAdapter tự động loại bỏ thinking tokens (\texttt{<think>...</think>}) từ phản hồi của thinking models.
+
+\subsubsection{EmbeddingAdapter}
+
+Model: \texttt{qwen/qwen3-embedding-8b}, dimension: 4096. Hỗ trợ single và batch embedding.
+
+\subsection{Storage Layer --- Lưu trữ dữ liệu}
+
+\subsubsection{NanoVectorDB (Mặc định)}
+
+Vector database nhẹ, lưu trữ dưới dạng JSON files. Phù hợp cho prototype và development. Ba vector store riêng biệt cho entities, relationships, và chunks.
+
+\subsubsection{Milvus Lite (Tùy chọn)}
+
+Schema: \texttt{id} (VARCHAR PK), \texttt{vector} (FLOAT\_VECTOR dim=4096), \texttt{content} (VARCHAR), \texttt{content\_type} (VARCHAR), \texttt{source} (VARCHAR), \texttt{ts} (INT64). Index: COSINE similarity với AUTOINDEX.
+
+Chuyển đổi qua biến môi trường: \texttt{VECTOR\_STORAGE=MilvusVectorDBStorage}.
+
+\subsubsection{NetworkX Graph Storage}
+
+Đồ thị tri thức được lưu dưới định dạng GraphML (chuẩn XML mở cho đồ thị). Mỗi node chứa: entity\_type, description, source\_ids. Mỗi edge chứa: description, keywords, weight.
+
+\subsection{Service Layer --- Logic nghiệp vụ}
+
+\subsubsection{ServiceContainer --- Quản lý vòng đời}
+
+ServiceContainer đảm bảo:
+\begin{itemize}
+  \item Khởi tạo đúng thứ tự: LLM $\to$ Embedding $\to$ RAG.
+  \item Dọn dẹp tài nguyên: Đóng HTTP sessions khi shutdown.
+  \item Thread safety: Sử dụng async/await xuyên suốt.
+\end{itemize}
+
+\subsubsection{RAGService --- Factory Pattern}
+
+RAGService thực hiện:
+\begin{enumerate}
+  \item Đăng ký prompt tiếng Việt nếu \texttt{SUMMARY\_LANGUAGE = "Vietnamese"}.
+  \item Tạo wrapper functions cho LLM và embedding.
+  \item Cấu hình reranker (Cohere Rerank v3.5) nếu được bật.
+  \item Tạo \texttt{RAGAnythingConfig} với các tùy chọn xử lý.
+  \item Khởi tạo \texttt{RAGAnything} instance và đảm bảo LightRAG sẵn sàng.
+\end{enumerate}
+
+\subsection{API Layer --- FastAPI Backend}
+
+\subsubsection{Endpoints}
+
+\begin{table}[H]
+\centering
+\caption{Danh sách API Endpoints}
+\begin{tabular}{p{3.5cm}p{3cm}p{6.5cm}}
+\toprule
+\textbf{Endpoint} & \textbf{Method} & \textbf{Mô tả} \\
+\midrule
+\texttt{/chat} & POST & Truy vấn RAG (query, mode, top\_k, response\_type) \\
+\texttt{/ingest} & POST & Nhập tài liệu từ đường dẫn \\
+\texttt{/ingest/upload} & POST & Upload và nhập tài liệu \\
+\texttt{/health} & GET & Kiểm tra sức khỏe hệ thống \\
+\texttt{/system/info} & GET & Thông tin cấu hình \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Request/Response models} sử dụng Pydantic với type validation.
+
+\subsection{UI Layer --- Giao diện Streamlit}
+
+Nhóm xây dựng giao diện chat tiếng Việt với:
+
+\begin{itemize}
+  \item \textbf{Sidebar:} Cấu hình chế độ truy vấn (hybrid/mix/local/global/naive/bypass), Top-K (1--50), định dạng trả lời.
+  \item \textbf{Upload tài liệu:} Hỗ trợ PDF, DOCX, PPTX, XLSX, PNG, JPG, TXT, MD.
+  \item \textbf{Chat interface:} Lịch sử hội thoại, hiển thị thời gian xử lý và chế độ truy vấn.
+  \item \textbf{Xử lý lỗi:} Thông báo tiếng Việt cho các trường hợp mất kết nối, timeout, lỗi hệ thống.
+\end{itemize}
+
+% =====================================================================
+\section{Hỗ trợ tiếng Việt}
+% =====================================================================
+
+\subsection{Kiến trúc prompt đa ngôn ngữ}
+
+Nhóm tận dụng hệ thống Prompt Language Registration của RAG-Anything:
+
+\begin{lstlisting}[language=pseudo]
+register_prompt_language("vi", PROMPTS_VI)
+set_prompt_language("vi")
+\end{lstlisting}
+
+\subsection{Danh sách prompt tiếng Việt}
+
+Nhóm xây dựng \textbf{bộ prompt tiếng Việt hoàn chỉnh} gồm 30+ template:
+
+\begin{table}[H]
+\centering
+\caption{Phân loại prompt tiếng Việt}
+\begin{tabular}{p{3.5cm}p{3.5cm}p{6cm}}
+\toprule
+\textbf{Loại} & \textbf{Số lượng} & \textbf{Mô tả} \\
+\midrule
+System Prompts & 5 & Vai trò chuyên gia (hình ảnh, bảng, toán, generic) \\
+Vision Prompts & 3 & Phân tích hình ảnh (có/không ngữ cảnh, fallback) \\
+Table Prompts & 2 & Phân tích bảng (có/không ngữ cảnh) \\
+Equation Prompts & 2 & Phân tích công thức (có/không ngữ cảnh) \\
+Generic Prompts & 2 & Phân tích nội dung tổng quát \\
+Chunk Templates & 4 & Template cho image/table/equation/generic chunks \\
+Query Prompts & 8 & Prompt phân tích khi truy vấn \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Query User Prompt}
+
+Mỗi truy vấn được thêm instruction bắt buộc:
+
+\textit{``Always respond in Vietnamese (Tiếng Việt). Use Vietnamese terminology.''}
+
+% =====================================================================
+\section{Công nghệ sử dụng}
+% =====================================================================
+
+\begin{table}[H]
+\centering
+\caption{Bảng tổng hợp công nghệ}
+\begin{tabular}{p{2.5cm}p{4cm}p{3cm}p{3.5cm}}
+\toprule
+\textbf{Tầng} & \textbf{Công nghệ} & \textbf{Chi tiết} & \textbf{Vai trò} \\
+\midrule
+LLM Text & Qwen3-30B-A3B & via OpenRouter & Sinh câu trả lời \\
+LLM Vision & Qwen2.5-VL-72B & via OpenRouter & Phân tích hình ảnh \\
+Embedding & Qwen3-Embed-8B & 4096 dims & Vector embedding \\
+Reranker & Cohere Rerank v3.5 & via OpenRouter & Sắp xếp kết quả \\
+Parser & MinerU & GPU/CUDA & Trích xuất PDF \\
+RAG & LightRAG + RA & Latest & Knowledge Graph \\
+Vector DB & NanoVectorDB & JSON format & Lưu trữ vector \\
+Graph DB & NetworkX & GraphML & Đồ thị tri thức \\
+Backend & FastAPI & Async & REST API \\
+Frontend & Streamlit & Chat UI & Giao diện \\
+HTTP & aiohttp & Async & Giao tiếp API \\
+Config & Pydantic Settings & v2 & Quản lý cấu hình \\
+Language & Python & $\geq$3.11 & Lập trình \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =====================================================================
+\section{Hướng dẫn cài đặt và sử dụng}
+% =====================================================================
+
+\subsection{Yêu cầu hệ thống}
+
+\begin{itemize}
+  \item Python $\geq$ 3.11
+  \item GPU NVIDIA với CUDA (khuyến nghị cho MinerU)
+  \item RAM $\geq$ 16GB
+  \item Disk $\geq$ 10GB
+\end{itemize}
+
+\subsection{Cài đặt}
+
+\begin{lstlisting}[language=bash,caption={Các bước cài đặt}]
+# 1. Clone repository
+git clone <repository-url>
+cd RAG-Anything-UIT
+
+# 2. Tao virtual environment
+python -m venv venv
+source venv/bin/activate
+
+# 3. Cai dat dependencies
+pip install -r requirements.txt
+
+# 4. Cau hinh environment
+cp .env.example .env
+# Chinh sua .env: them OPENROUTER_API_KEY
+\end{lstlisting}
+
+\subsection{Sử dụng}
+
+\textbf{Khởi động hệ thống:}
+
+\begin{lstlisting}[language=bash]
+# Terminal 1: Khoi dong API server
+python run_api.py     # http://localhost:8000
+
+# Terminal 2: Khoi dong UI
+streamlit run run_ui.py  # http://localhost:8501
+\end{lstlisting}
+
+\textbf{Nhập tài liệu qua CLI:}
+
+\begin{lstlisting}[language=bash]
+python ingest_pdf.py path/to/document.pdf
+python ingest_pdf.py path/to/doc.pdf --start-page 0 --end-page 10
+\end{lstlisting}
+
+\textbf{Truy vấn qua CLI:}
+
+\begin{lstlisting}[language=bash]
+python query_system.py "Cau hoi cua ban"
+python query_system.py "Cau hoi" --mode mix --top-k 15
+\end{lstlisting}
+
+% =====================================================================
+\section{Kết luận và hướng phát triển}
+% =====================================================================
+
+\subsection{Kết quả đạt được}
+
+Nhóm đã xây dựng thành công hệ thống RAG-Anything-UIT với các thành tựu:
+
+\begin{enumerate}
+  \item \textbf{Hệ thống RAG đa phương thức hoàn chỉnh:} Xử lý được text, hình ảnh, bảng biểu, công thức toán học trong cùng một pipeline thống nhất.
+  \item \textbf{Đồ thị tri thức tích hợp:} Sử dụng LightRAG để xây dựng knowledge graph, cho phép truy vấn sâu hơn so với vector search đơn thuần, với 6 chế độ truy vấn khác nhau.
+  \item \textbf{Hỗ trợ tiếng Việt toàn diện:} 30+ prompt template tiếng Việt, giao diện chat tiếng Việt, kết quả trả lời tiếng Việt.
+  \item \textbf{Kiến trúc production-ready:} API RESTful với FastAPI, dependency injection, retry logic, error handling, health check, CORS.
+  \item \textbf{Linh hoạt và mở rộng:} Hỗ trợ nhiều vector database backend, nhiều model LLM, reranker tùy chọn.
+\end{enumerate}
+
+\subsection{Hạn chế hiện tại}
+
+\begin{enumerate}
+  \item Phụ thuộc API bên ngoài (OpenRouter) --- chi phí và độ trễ mạng.
+  \item MinerU yêu cầu GPU NVIDIA.
+  \item Chưa có streaming response.
+  \item Chưa có authentication cho API.
+\end{enumerate}
+
+\subsection{Hướng phát triển}
+
+\begin{enumerate}
+  \item \textbf{Streaming response:} Tích hợp Server-Sent Events (SSE).
+  \item \textbf{Self-hosted LLM:} Triển khai mô hình local bằng vLLM hoặc Ollama.
+  \item \textbf{Multi-user support:} Authentication, authorization, tách biệt dữ liệu.
+  \item \textbf{Đánh giá chất lượng:} Benchmark trên dữ liệu tiếng Việt.
+  \item \textbf{Tối ưu hiệu suất:} Cache thông minh, lazy loading, tối ưu batch.
+\end{enumerate}
+
+\vspace{2cm}
+\begin{center}
+\rule{8cm}{0.4pt}\\[0.5cm]
+\textit{Báo cáo được thực hiện bởi nhóm RAG-Anything-UIT}\\
+\textit{Đại học Công nghệ Thông tin --- ĐHQG TP.HCM}
+\end{center}
+
+\end{document}
