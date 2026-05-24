@@ -27,16 +27,27 @@ IMAGES_DIR = CONTENT_LIST.parent / "images"
 FILE_REF = "cam_nang_sau_dai_hoc_2025_0.pdf"
 
 
-def clear_workdir(workdir: str) -> None:
-    """Remove all files in rag_workdir so LightRAG starts fresh."""
+_CACHE_FILES = {"kv_store_llm_response_cache.json"}
+
+
+def clear_workdir(workdir: str, keep_cache: bool = True) -> None:
+    """Remove files in rag_workdir so LightRAG starts fresh.
+
+    When keep_cache is True, preserves the LLM response cache so
+    re-ingestion with the same model and data skips cached LLM calls.
+    """
     p = Path(workdir)
-    if p.exists():
-        for item in p.iterdir():
-            if item.is_dir():
-                shutil.rmtree(item)
-            else:
-                item.unlink()
-        log.info("Cleared %s", workdir)
+    if not p.exists():
+        return
+    for item in p.iterdir():
+        if keep_cache and item.name in _CACHE_FILES:
+            log.info("Keeping cache: %s", item.name)
+            continue
+        if item.is_dir():
+            shutil.rmtree(item)
+        else:
+            item.unlink()
+    log.info("Cleared %s (keep_cache=%s)", workdir, keep_cache)
 
 
 def clear_milvus_storage(db_path: str) -> None:

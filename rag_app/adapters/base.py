@@ -11,8 +11,18 @@ from rag_app.core.exceptions import RetryExhaustedError
 
 log = logging.getLogger(__name__)
 
-RETRYABLE_STATUS = frozenset({429, 500, 502, 503, 504})
+RETRYABLE_STATUS = frozenset({403, 429, 500, 502, 503, 504})
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+
+_MAX_CONCURRENT_REQUESTS = 10
+_global_semaphore: asyncio.Semaphore | None = None
+
+
+def _get_semaphore() -> asyncio.Semaphore:
+    global _global_semaphore
+    if _global_semaphore is None:
+        _global_semaphore = asyncio.Semaphore(_MAX_CONCURRENT_REQUESTS)
+    return _global_semaphore
 
 
 class BaseOpenRouterClient:
@@ -54,27 +64,32 @@ class BaseOpenRouterClient:
         session = await self._get_session()
         max_retries = self._settings.max_retries
         last_err: Exception | None = None
+        sem = _get_semaphore()
 
         for attempt in range(1, max_retries + 1):
             try:
-                async with session.post(url, json=payload) as resp:
-                    if resp.status in RETRYABLE_STATUS:
-                        body = await resp.text()
-                        log.warning(
-                            "HTTP %d (attempt %d/%d): %s",
-                            resp.status, attempt, max_retries, body[:200],
-                        )
-                        last_err = aiohttp.ClientResponseError(
-                            resp.request_info,
-                            resp.history,
-                            status=resp.status,
-                            message=body[:200],
-                        )
-                        await asyncio.sleep(min(2 ** attempt, 30))
-                        continue
+                async with sem:
+                    async with session.post(url, json=payload) as resp:
+                        if resp.status in RETRYABLE_STATUS:
+                            body = await resp.text()
+                            delay = min(2 ** attempt, 30)
+                            if resp.status in (403, 429):
+                                delay = min(2 ** (attempt + 1), 60)
+                            log.warning(
+                                "HTTP %d (attempt %d/%d), retry in %ds",
+                                resp.status, attempt, max_retries, delay,
+                            )
+                            last_err = aiohttp.ClientResponseError(
+                                resp.request_info,
+                                resp.history,
+                                status=resp.status,
+                                message=body[:200],
+                            )
+                            await asyncio.sleep(delay)
+                            continue
 
-                    resp.raise_for_status()
-                    return await resp.json()
+                        resp.raise_for_status()
+                        return await resp.json()
 
             except (aiohttp.ClientError, asyncio.TimeoutError) as exc:
                 log.warning(
