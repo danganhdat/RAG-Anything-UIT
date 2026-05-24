@@ -86,11 +86,18 @@ async def chat(
             **kwargs,
         )
     except Exception as exc:
-        log.exception("Query failed")
-        raise HTTPException(status_code=500, detail=str(exc))
+        log.exception("Query failed: %s", exc)
+        elapsed = round(time.monotonic() - start, 2)
+        return QueryResponse(
+            answer=f"Query error: {exc}",
+            elapsed_seconds=elapsed,
+            mode=request.mode,
+        )
 
     elapsed = round(time.monotonic() - start, 2)
     log.info("Response generated in %.2fs", elapsed)
+    if not answer:
+        answer = "Sorry, I'm not able to provide an answer to that question."
     return QueryResponse(answer=answer, elapsed_seconds=elapsed, mode=request.mode)
 
 
